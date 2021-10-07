@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Genera 3 números aleatorios entre 1 y 99 pero que no se repita ninguno -->
+    <script>
+
+        var numero = Array();
+
+        for (let i = 0; i < 3; i++) {
+            numero[i] = Math.round(Math.random (99-1)+1);
+            if (numero[i] == numero[i -1]) {
+                numero[i] += 1;
+            } else if(numero[i] == numero[i -1]){
+                numero[i] += 2;
+            }
+
+            document.write(numero[i] + "<br>")
+        }
+
+    
+    </script>
+</body>
+</html>
