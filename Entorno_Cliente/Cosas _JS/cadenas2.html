@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Ejercicio 1
+            var texto = prompt("Dime una frase");
+            
+            //Recorro la frase
+            for (let i = 0; i < texto.length; i++) {
+                //Cuando encuentre la primera vocal cortara el for
+                if ((texto[i] == 'a')||(texto[i] == "e")||(texto[i] == 'e')||(texto[i] == 'i')||(texto[i] == 'o')||(texto[i] == 'u')) {
+                    document.write("La primera vocal es " + texto[i]);
+                    i = texto.length 
+                }
+            }
+
+        //Ejercicio 2
+            var eleccion_Usuario = parseInt(prompt("dime una opcion del piedra (1)-papel (2)-tijera (3)"))
+
+            var eleccion_Maquina = Math.floor(Math.random() * 3+1);
+
+            switch (eleccio_Usurio) {
+                
+                case 1:
+                    
+                    break;
+            
+                case 2:
+                    
+                    break;
+            
+                case 3:
+                    
+                    break;
+            
+                default:
+                    break;
+            }
+    </script>
+</body>
+</html>

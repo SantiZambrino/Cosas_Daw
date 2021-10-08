@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Parte 1
+        // for (let i = 1; i <= 14; i++) {
+        //     var num = Math.floor(Math.random() * 3+1)
+        //     if (num == 1) {
+        //         document.write ("Resultado " + i +": 1" + "<br>")
+        //     }
+        //     else if (num == 2) {
+        //         document.write ("Resultado " + i +": x" + "<br>")
+        //     }
+        //     else{
+        //         document.write ("Resultado " + i +": 2" + "<br>")
+        //     }
+        // }
+
+    //Parte 2
+        for (let i = 1; i <= 14; i++) {
+            var num = Math.floor(Math.random() * 10+1)
+            if (num >= 1 && num <= 6) {
+                document.write ("Resuktado " + i +": 1" + "<br>")
+            }
+            else if (num >= 7 && num <= 9) {
+                document.write ("Resuktado " + i +": x" + "<br>")
+            }
+            else if (num == 10) {
+                document.write ("Resuktado " + i +": 2" + "<br>")
+            }
+        }
+    </script>
+</body>
+</html>
