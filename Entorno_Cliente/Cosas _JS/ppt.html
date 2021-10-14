@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //Declaro variables
+        var contadorUsuario = 0;
+        var contadorMaquina = 0;
+        var jugar = true;
+        //1 empate, 2 gana usuario, 3 gana maquina
+        var solucion = [[1,3,2],[2,1,3],[3,2,1]]
+        var eleccion_Maquina = 0;
+        var eleccion_usuario;
+        var jugarOtraVez = 0;
+
+        //Se  jugara mientras jugar sea true
+        while (jugar) {
+
+            //Si el usuario mete una opcion que no debe, se repite el bucle
+            while ((contadorUsuario < 3) && (contadorMaquina < 3)) {
+
+                do {
+                    eleccion_usuario = parseInt(prompt("elige una opción. (0) tijera (1) papel (2) tijera"));   
+                    if ((eleccion_usuario < 0) || (eleccion_usuario > 3)) {
+                        alert("Elige una opcion correcta")
+                    }    
+                } while ((eleccion_usuario < 0) || (eleccion_usuario > 3));
+
+            
+                eleccion_Maquina = parseInt(Math.floor(Math.random() * 2));
+
+               //se guarda en jugadas el valor de la tabla solucion 
+                var jugadas = solucion[eleccion_usuario][eleccion_Maquina];
+               
+                //Se compara el valor de la jugada y se da el resultado
+                if (jugadas == 1) {
+                    alert("La jugada ha terminado en empate\n Puntos usuario "+ contadorUsuario +"\n Puntos maquina " + contadorMaquina);
+                } else if(jugadas == 2){
+                    alert("Ha ganado el usuario \n Puntos usuario "+ contadorUsuario +"\n Puntos maquina " + contadorMaquina);
+                    contadorUsuario++;
+                }else if (jugadas == 3) {
+                    alert("Ha ganado la maquina \n Puntos usuario "+ contadorUsuario +"\n Puntos maquina " + contadorMaquina);
+                    contadorMaquina++;
+                }
+
+                //Condicion para saber quien ha ganado
+                if (contadorUsuario == 3) {
+                    alert("la partida la ha ganado el usuario")
+                } else if(contadorMaquina == 3){
+                    alert("la partida la ha ganado la maquina")
+                }
+            }
+   
+            
+            //Si quiere jugar otra vez el valor de jugar queda en true y se repite y si da false termina el juego
+            do {
+                jugarOtraVez = parseInt(prompt("quieres jugar otra vez (1) si, (2) no"));
+                if (jugarOtraVez === 1) {
+                    contadorUsuario = 0;
+                    contadorMaquina = 0;
+                    jugar = true;
+                } else if (jugarOtraVez === 2){
+                    jugar = false;
+                }
+            } while (jugarOtraVez != 1 && jugarOtraVez != 2);
+            
+        }
+       
+    </script>
+</body>
+</html>

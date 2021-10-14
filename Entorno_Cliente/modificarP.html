@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+       <meta charset="UTF-8">
+
+       <title>Poner un enlace dentro de un párrafo</title>
+
+</head>
+
+<body>
+
+       <p id="p1">1. Se ofrece trabajo de desarrollador de aplicaciones Web propias, tanto Front como Back end. Buscamos un perfil de un técnico informático programador de aplicaciones que sea capaz de adaptarse a los distintos requisitos de los proyectos que estamos implementando, y que le guste aprender nuevas tecnologías.</p>
+
+       <p id="p2">2. Te integrarás en un equipo de desarrollo con un ambiente colaborativo, con un gran nivel humano y profesional. La libertad para utilizar nuevas tecnologías, y llevar a cabo las ideas que aportes a los proyectos te permitirá un gran crecimiento profesional. </p>
+
+       <p id="p3">3. Software es líder en el sector de la educación aportando soluciones para la elaboración de horarios académicos, a través de nuestro propio software. Actualmente nos encontramos en fase de crecimiento con nuevos proyectos y servicios. Si crees que esta oferta encaja con tu perfil de ingeniero/a técnico/a en informática, ¡no lo dudes e inscríbete! </p>
+
+       <p id="p4">4. Requisitos mínimos.</p>
+
+        <!-- <p id="entre3y4">No me entero</p> -->
+
+       <p id="p5">5. Aptitud para la programación y el desarrollo de aplicaciones informáticas. Con base académicas de Grado de Ingeniero o Grado Superior de FP se requiere facilidad para adaptarse y adquirir nuevos conocimientos. </p>
+
+
+
+<script>
+
+//que en el tercer párrafo haya un enlace con el texto "+ info" creado con javacript y que enlace a https://medac.es
+//Creo elemento
+
+var parrafos = document.querySelectorAll("p");//array con los parrafos
+
+var enlace = document.createElement("a");// crea el elemento
+enlace.href=" https://medac.es"; //Agrego el enlace
+enlace.innerHTML= "+info"; //Inserto en el html
+parrafos[2].appendChild(enlace);// indico en que parrafo va
+
+//inserta un párrafo de color rojo entre el tercer y el cuarto párrafos
+//Creo elemento
+    var pNuevo = document.createElement("p");// creo var con el elemento
+	pNuevo.innerHTML = "nuevo texto con javascript"; //inserto el html
+	pNuevo.style.color = "red"; //indico el color
+
+    var cuerpo = document.querySelectorAll("body")[0]; //Selecciono los elementos del body
+    cuerpo.insertBefore(pNuevo, parrafos[3]);//le digo donde insertar el texto
+
+
+//elimina el segundo párrafo [1]
+   
+    cuerpo.removeChild(parrafos[1]);// selecciono que elemento borrar del array
+
+</script>
+
+</body>
+
+</html>
+
+ 
