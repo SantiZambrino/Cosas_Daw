@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var contadorUsuario = 0;
+        var contadorMaquina = 0;
+        var jugar = true;
+        // T_SOLUTION[][] = {{0,2,1},{1,0,2},{2,1,0}};
+        //1 empate, 2 gana usuario, 3 gana maquina
+        var solucion = [[1,3,2],[2,1,3],[3,2,0]]
+        var eleccion_Maquina = 0;
+
+        while (jugar) {
+            while ((contadorUsuario < 3) && (contadorMaquina < 3)) {
+
+                var eleccion_usuario = parseInt(prompt("elige una opción. (0) tijera (1) papel (2) tijera"))
+                console.log(eleccion_usuario)
+        
+                eleccion_Maquina = parseInt(Math.floor(Math.random() * 2));
+                console.log(eleccion_Maquina)
+
+                var jugadas = solucion[eleccion_usuario][eleccion_Maquina];
+                console.log("Aqui esta la jugada " + jugadas);
+
+                if (jugadas == 1) {
+                    document.write("La jugada ha terminado en empate");
+                } else if(jugadas == 2){
+                    document.write("Ha ganado el usuario");
+                    contadorUsuario++;
+                }else if (jugadas == 3) {
+                    document.write("Ha ganado la maquina");
+                    contadorMaquina++;
+                }
+            
+            }
+   
+            var jugarOtraVez = 0;
+            do {
+                jugarOtraVez = parseInt(prompt("quieres jugar otra vez (1) si, (2) no"));
+                if (jugarOtraVez === 1) {
+                    contador = 0;
+                    jugar = true;
+                } else if (jugarOtraVez === 2){
+                    jugar = false;
+                }
+            } while (jugarOtraVez != 1 && jugarOtraVez != 2);
+            
+        }
+       
+    </script>
+</body>
+</html>

@@ -65,7 +65,7 @@
 
     // $multiplica_manzana = $cadena * 1.5;
 
-    //Ejer8
+    // Ejer8
     // $buleano1 = true;
     // $buleano2 = false;
 
