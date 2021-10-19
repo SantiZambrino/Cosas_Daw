@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+                //ejer1
+                function sumaResta() {
+            var num1 = parseInt(prompt("Dime un numero"));
+            var num2 = parseInt(prompt("Dime otro numero"));
+
+            let suma = num1 + num2;
+            let resta = num1 -num2;
+
+            res = `la suma de los numeros es ${suma} y la resta es ${resta}`
+            return  alert(res);
+        }
+        //ejer2
+        function adivina() {
+            var numMaquina = Math.floor(Math.random() * 10) + 1;
+            var numUsuario = parseInt(prompt("Dime un numero"));
+            do {
+                if (numUsuario > numMaquina) {
+                    numUsuario = parseInt(prompt("Te has pasado, Dime otro numero: "));
+                }else if (numUsuario < numMaquina) {
+                    numUsuario = parseInt(prompt("Te has quedado corto, Dime un numero"));
+                }else if(numUsuario == numMaquina){
+                    return alert("Has acertado");
+                }
+            } while (numUsuario != numMaquina);
+           
+        }
+
+        //Ejer 3
+        // 0 -5 1€ , 6-12 75%, 13-50 0, 51-65 75%, 65 1
+        function bolera(params) {
+            var precio = 10;
+            var edad = parseInt(prompt("dime tu  edad"));
+            var personas = parseInt(prompt("dime cuantos personas"));
+
+            if ((edad <= 5)||(edad > 66)) {
+                precio= 1;
+            }else if (((edad >= 6) && (edad <= 12))||((edad >= 51) && (edad <= 65))) {
+                precio = 7.5;
+            }else if ((edad >= 13) && (edad <= 50)) {
+                precio = 10;
+            }
+
+            var total = precio * personas;
+            var ticket = `<hr>`;
+            ticket += `bolera illo Robert<br>`;
+            ticket += `<hr>`;
+            ticket += `edad: ${edad}<br>`;
+            ticket += `Precio: ${precio}<br>`;
+            ticket += `Total: ${total}`;
+            ticket += `<hr>`;
+
+            return document.write(ticket);
+
+        }
+    </script>
+</head>
+<body>
+     <!-- a) Al pulsar un botón pido 2 numeros al usuario muestro su suma resta multiplicación -->
+     <button onclick="sumaResta()" type="button">Botón</button>
+     <!-- b) Al pulsar "Jugar" se ejecuta el juego de adivinar el numero -->
+     <button onclick="adivina()" type="button">Jugar</button>
+     <!-- c)AL pulsar el botón "bolera" genera un ticket de la bolera(document.write) -->
+     <button onclick="bolera()" type="button">bolera</button>
+</body>
+</html>
