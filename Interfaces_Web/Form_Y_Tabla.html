@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla y Form</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: content-box;
+    }
+    #formulario{
+        margin: 200px 250px;
+    }
+    form{
+        padding: 10px;
+    }
+    #tabla{
+        border: 1px solid;
+        margin-left: 300px;
+        margin-right: 366px;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color: orange;
+    }
+</style>
+<body>
+    <div id="formulario">
+        <fieldset>
+            <legend>Formulario de prueba</legend>
+        <form action="">
+           Introduzca su nombre: <input value="nombre" type="text" placeholder="Nombre"><br><br>
+           Contraseña: <input value="nombre" type="password" placeholder="Nombre"><br><br>
+           Elige tu programa favorito: <select name="seleccion" id="seleccion">
+                <option value="">Adobe Color</option>
+                <option value="">Photoshop</option>
+                <option value="">MockFLow</option>
+            </select> <br><br>
+            <input type="button" value="enviar" name= "boton">
+            <button type="button" value="borrar">Borrar</button>
+        </form>
+        </fieldset>
+    </div>
+    <div id="tabla">
+        <table align="center" border="2">
+            <tr>
+                <th colspan="3">Programas diseño</th>
+            </tr>
+            <tr>
+                <td><a href="https://color.adobe.com/es/create">Adobe Color</a></td>
+                <td><a href="https://www.photopea.com/">Photoshop Online</a></td>
+                <td><a href="https://www.mockflow.com/">Mock Flow</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
