@@ -3,18 +3,24 @@ nuevos para cada propiedad y los aplica a la tabla. ¿se aplican correctamente l
 valores? ¿Falla alguno?*/
 
 function medir() {
+    
     //elements devuelve un array
-    var elemento = document.getElementsByTagName("table");
+    let elemento = document.getElementsByTagName("table");
     //El atributo que se pasa, hay que ponerlo entre comillas
 
-    var ancho = elemento[0].getAttribute("width");
+    let ancho = elemento[0].getAttribute("width");
     console.log(ancho);
-    var alto = elemento[0].getAttribute("height");
+    let alto = elemento[0].getAttribute("height");
 
-    var mensaje = `el ancho es ${ancho} y el alto es ${alto}`;
-
-    alert(mensaje);
+    let mensaje = `el ancho es ${ancho} y el alto es ${alto}`;
     console.log(mensaje)
+
+    let nuevaAnchura = parseInt(prompt("Dime una nueva Anchura."));
+    let nuevaAltura = parseInt(prompt("Dime una nueva Altura."));
+
+    elemento[0] = elemento[0].setAttribute('height', nuevaAnchura);
+    elemento[0].width = nuevaAnchura;
+    
 }
 /*
 El segundo muestra el valor actual del borde de la tabla y solicita un valor nuevo
