@@ -1,0 +1,25 @@
+img{
+    height: 300px;
+    width: 300px;
+}
+.divIMG{
+    border: 1px solid gray;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top:25%;
+    left: 25%;
+}
+
+.divBTN{
+    position:absolute;
+    top: 20%;
+    left: 31%;
+    border: 1px solid gray;
+    border-radius: 10%;
+    height: 50px;
+    width: 170px;
+    padding-top: 3%;
+    padding-left: 3%;
+    background-image: linear-gradient(red, yellow) ;
+}
