@@ -1,0 +1,15 @@
+
+.div1{
+  border: 15px solid #3EC483;
+  background: #5DEAA8;
+  height: 500px;
+  width: 500px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+h1{
+  line-height: 485px; 
+  margin-left: 80px;
+}

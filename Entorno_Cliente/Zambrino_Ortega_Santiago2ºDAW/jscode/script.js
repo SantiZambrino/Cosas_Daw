@@ -78,7 +78,7 @@ function ejercicio4() {
     var dedo = document.getElementsByTagName("p");
     var mensaje = "";
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
         var numeros = parseInt(prompt("Dime un numero"));
         //Los guardo en un Array
         arrayNumero.push(numeros);
@@ -93,7 +93,7 @@ function ejercicio4() {
             impares.push(multiplicacion);  
         }
         mensaje = "pares: " + pares.join(',');
-        mensaje += "\n impares: " + impares.join(',');
+        mensaje += "<br> impares: " + impares.join(',');
         dedo[1].innerHTML = mensaje; 
     }
         
@@ -101,7 +101,7 @@ function ejercicio4() {
 
 
 /*  
-Al pulsar el botón ¡¡ Genera !!, en el interior de cada uno de los divssuperiores aparece un valor numérico entre 1 y 50, obtenido de formaaleatoria.
+Al pulsar el botón ¡¡ Genera !!, en el interior de cada uno de los divssuperiores aparece un valor numérico entre 1 y 50, obtenido de forma aleatoria.
 */
 
 function generar() {
@@ -133,6 +133,7 @@ function comparar() {
     }else{
         dedoSalida.innerHTML = dedoDer.innerHTML;
     }
+
     //Desactivo compara y activo genera
     dedoBoton[1].disabled = true;
     dedoBoton[0].disabled = false;
