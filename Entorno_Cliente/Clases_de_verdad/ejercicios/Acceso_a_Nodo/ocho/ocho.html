@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Over</title>
+    <style>
+        img{
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+    <link rel="stylesheet" href="script.js">
+</head>
+<body>
+    <img src="../cuatro/img/goku1.png" alt="foto de dragon ball" onmouseover="entraImagen()" onmouseout="saleImagen()">
+</body>
+</html>
+
+<script>
+    function entraImagen(){
+    console.log("Estoy dentro de la imagen");
+    let dedo = document.querySelector("img");
+    dedo.src = "../cuatro/img/goku3.png";
+}
+
+function saleImagen() {
+    console.log("estoy fuera");
+    let dedo = document.querySelector("img");
+    dedo.src = "../cuatro/img/goku1.png";
+}
+</script>

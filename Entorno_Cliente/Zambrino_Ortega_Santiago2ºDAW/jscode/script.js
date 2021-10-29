@@ -76,32 +76,27 @@ function ejercicio4() {
     var impares = new Array();
     var multiplicacion = 0;
     var dedo = document.getElementsByTagName("p");
+    var mensaje = "";
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
         var numeros = parseInt(prompt("Dime un numero"));
         //Los guardo en un Array
         arrayNumero.push(numeros);
         //Creo el random
         let random = Math.floor(Math.random() * 10) + 1;
-        console.log("soy el random " + random);
         //multiplico
         multiplicacion =  numeros * random;
         //Si es el resto es igual a 0 lo guardo en par
         if (multiplicacion % 2 == 0) {
-            dedo[1].innerHTML = "Pares: ";
             pares.push(multiplicacion);
-            for (let i = 0; i < pares.length; i++) {
-                dedo[1].innerHTML += pares[i] + " ";
-            }
         } else {
-            //Si es diferente a 0 lo guardo en el array impar.
-            impares.push(multiplicacion);
-            dedo[1].innerHTML = "Impares: ";
-            for (let i = 0; i < impares.length; i++) {
-                dedo[1].innerHTML += impares[i] + " ";
-            }   
+            impares.push(multiplicacion);  
         }
+        mensaje = "pares: " + pares.join(',');
+        mensaje += "<br> impares: " + impares.join(',');
+        dedo[1].innerHTML = mensaje; 
     }
+        
 }
 
 
@@ -133,8 +128,8 @@ function comparar() {
     var dedoSalida = document.getElementById("salida");
 
     //Comparo cual es mayor y lo muestro por pantalla.
-    if (dedoIzq.innerHTML > dedoDer.innerHTML) {
-        dedoSalida.innerHTML = dedoIzq.innerHTML;
+    if (parseInt(dedoIzq.innerHTML) > parseInt(dedoDer.innerHTML)) {
+        dedoSalida.innerHTML = dedoIzq.innerHTML;     
     }else{
         dedoSalida.innerHTML = dedoDer.innerHTML;
     }
