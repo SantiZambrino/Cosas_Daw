@@ -13,7 +13,8 @@ function color(color) {
         //Si el valor de uno de los botones, es igual al parametro que se pasa por la funcion se modificara un atributo del elemento body
         if (elementButton[i].value == color) {
             //setAttibute cambia el atributo del elemento
-            elementBody[0].setAttribute('style', "background-color: " + color);
+            // elementBody[0].setAttribute('style', "background-color: " + color);
+            elementBody[0].style.backgroundColor = color;
         }
     }
 }
