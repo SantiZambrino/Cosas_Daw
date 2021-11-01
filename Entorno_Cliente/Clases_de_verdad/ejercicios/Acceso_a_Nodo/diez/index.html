@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diez</title>
+    <script src="./script.js"></script>
+</head>
+<style>
+    div{
+        border: 1px solid gray;
+        width: 100px;
+        height: 100px;
+        margin: 2%;
+    }
+    #uno{
+        background-color: aqua;
+    }
+    #dos{
+        background-color: brown;
+    }
+    #tres{
+        background-color: chartreuse;
+    }
+</style>
+<body>
+    <!-- Crea tres DIV de tamaño 100x100px y con un color de fondo diferente cada uno. -->
+    <div onmouseover="cambioColor1()" id="uno" onmouseout="colorOriginal()"></div>
+    <div onmouseover="cambioColor2()" id="dos" onmouseout="colorOriginal()"></div>
+    <div onmouseover="cambioColor3()" id="tres" onmouseout="colorOriginal()"></div>
+</body>
+</html>

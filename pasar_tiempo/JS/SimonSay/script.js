@@ -1,19 +1,21 @@
-  var counter = 0;
+
 function play() {
-        console.log(counter)
-        var interval= setInterval(intervalPlay, 1000);
-        setTimeout(clearInterval(interval), 3000);   
+        var counter = 0;
+        counter++;
+        if (counter == 4) {
+            clearInterval(interval);          
+        } else{
+            var interval= setInterval(intervalPlay, 1000);
+        }
 }
 
 function intervalPlay() {
     //Selecciono los elementos child
     let finger = document.getElementsByClassName("child");
-  
     
     //Objetivo numero 1 mostrar una secuencia
     for (let i = 0; i < 4; i++) {
-        let randomColor = Math.floor(Math.random() * 4) + 1;
-        // finger[].style.setProperty("background-Color", "green");       
+        let randomColor = Math.floor(Math.random() * 4) + 1;  
         switch (randomColor) {
             case 1:
                 finger[0].style.setProperty("background-Color", "green");
@@ -40,6 +42,7 @@ function intervalPlay() {
                 }, 1000); 
                 break;
         }
-        counter++;
     }
-}
+}  
+
+
