@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            border: 1px solid black;
+            font-style: italic;
+            font-size: 20px;
+            height: 400px;
+            width: 400px;
+        }
+        .contenedor .oculto{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Crear un menú vertical con efecto acordeón usando los siguientes apartados
+     -->
+     <div class="contenedor">
+     <ul> 
+         <li onclick="abrir(0)">Inicio</li>
+            <ul class="oculto">
+                 <li>Portada</li>
+                 <li>Acerca de mi</li>
+                 <li>Mis Fotos</li>
+            </ul>
+         <li onclick="abrir(1)">Proyecto</li>
+            <ul class="oculto">
+                <li>Web App</li>
+                <li>Mobile</li>
+                <li>Juegos</li>
+            </ul>   
+         <li onclick="abrir(2)">Portfolio</li>
+            <ul class="oculto">
+                <li>Paginas Web</li>
+                <li>Software</li>
+            </ul>
+         <li onclick="abrir(3)">Contacto</li>
+     </ul>
+    </div>
+</body>
+</html>
+<script src="../catorce/script.js"></script>

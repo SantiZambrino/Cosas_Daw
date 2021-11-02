@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../trece/script.js"></script>
+</head>
+<body>
+    <!-- Crea el efecto SPOILER que se puede ver en foros y otros páginas. Se oculta el contenido de un elemento (pej, un párrafo) y sólo se muestra el mensaje “Mostrar”. Al hacer click sobre dicho mensaje, se muestra el contenido del elemento yel mensaje cambia a “Ocultar”. Si se pulsa sobre ese mensaje, el elemento vuelve a suestado original (contenido oculto y mensaje “Mostrar”). -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sint natus illum iusto id facere ut, expedita sed soluta aut veniam quibusdam praesentium qui esse non magni rem fugiat nulla?</p>
+    <p> Spoiler: <a href="#" onclick="mostrarSpoiler();">Mostrar</a></p>
+    <div class="contenido" style="display: none;">
+        <p>Esto es un Spoiler</p>
+    </div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque magni accusamus molestias natus, ducimus, corporis delectus iusto ea laboriosam, earum voluptas tempora? Minima placeat maiores amet ex perspiciatis perferendis? Veniam!</p>
+</body>
+</html>

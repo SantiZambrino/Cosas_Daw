@@ -1,12 +1,9 @@
 
+
+
 function play() {
-        var counter = 0;
-        counter++;
-        if (counter == 4) {
-            clearInterval(interval);          
-        } else{
-            var interval= setInterval(intervalPlay, 1000);
-        }
+    interval= setInterval(intervalPlay, 2000);
+    setTimeout(function() {clearInterval(interval)}, 6000);
 }
 
 function intervalPlay() {
@@ -18,28 +15,36 @@ function intervalPlay() {
         let randomColor = Math.floor(Math.random() * 4) + 1;  
         switch (randomColor) {
             case 1:
-                finger[0].style.setProperty("background-Color", "green");
+                setTimeout(function(){
+                    finger[0].style.setProperty("background-Color", "green");    
+                }, 500);
                 setTimeout(function() {
                     finger[0].style.setProperty("background-Color", "white");
                 }, 1000);
                 break;
             case 2:
-                finger[1].style.setProperty("background-Color", "red");
+                setTimeout(function(){
+                    finger[1].style.setProperty("background-Color", "red");    
+                }, 700);
                 setTimeout(function() {
                     finger[1].style.setProperty("background-Color", "white");
                 }, 1000);
                 break;
             case 3:
-                finger[2].style.setProperty("background-Color", "yellow");
+                setTimeout(function(){
+                    finger[2].style.setProperty("background-Color", "yellow");    
+                }, 800);
                 setTimeout(function() {
                     finger[2].style.setProperty("background-Color", "white");
                 }, 1000);
                 break;
             case 4:
-                finger[3].style.setProperty("background-Color", "blue");
+                setTimeout(function(){
+                    finger[3].style.setProperty("background-Color", "blue");    
+                }, 1200);
                 setTimeout(function() {
                     finger[3].style.setProperty("background-Color", "white");
-                }, 1000); 
+                }, 1300); 
                 break;
         }
     }
