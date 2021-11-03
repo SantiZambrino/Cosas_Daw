@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
 }
 html{
     font-size: 62.5%;
@@ -12,60 +13,90 @@ a{
 }
 
 .container{
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     width: 100%;
     height: 100%;
 }
     .navegador{
-        border: 1px solid gray;
+        /* border: 1px solid gray; */
         width: 100%;
-        height: 100px;
-        background-color: #1A293E;
+        /* height: auto; */
+        background-color: #E4E4E4;
+    }
+/* 
+    .navegador-img{
+        width: 40%;
+       padding: 50px 60px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    } */
+
+    .navegador img{
+        width: 70px;
+        height: 50px;
+        margin: 1% 0 0 1%;
+        /* background-color: tomato; */
     }
 
     .navegador ul a{
         font-size: 2.6rem;
-        color: #E4E4E4;
+        color: #1A293E;
         position: relative;
         top: 20px;
-        left: 80%;
+        left: 70%;
         margin: 0 1%;
         display: inline-block;
     }
 
     .container .seccion1{
         position: relative;
-        top: 55px;
+        top: 53px;
         width: 50%;
         height: 893px;
-        border: 1px solid gray;
-        background-color: #51afb0;
+        /* border: 1px solid gray; */
+        background-color: #1A293E;
     }
 
 
     .container .seccion1 h1{
         font-size: 10.0rem;
         position: relative;
-        top: 446.5px;
-        left: 77%;
+        top: 444px;
+        left: 75%;
         color: #E4E4E4;
     }
 
-    .container .seccion2{
-        position: relative;
-        bottom: 836px;
-        width: 51%;
-        left: 50%;
-        height: 893px;
-        border: 1px solid gray;
-        background-color: #E4E4E4;
-    }
-
-    
     .container .seccion2 h1{
         font-size: 10.0rem;
         position: relative;
         top: 442px;
         right: -0.5%;
         color: #1A293E;
+    }
+
+    .container .seccion2{
+        position: relative;
+        bottom: 841px;
+        width: 51%;
+        left: 50%;
+        height: 894px;
+        background-color: #b2caeb;
+        background-image: url(/img/SantiRecorte.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 90%;   
+    }
+
+
+    /* mierda de puta clase  */
+
+    @media screen and (max-width:800px){
+
+        .navegador{
+
+           background-color: chartreuse;
+        }
+
     }

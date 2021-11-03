@@ -1,0 +1,26 @@
+.main_boxes {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: solid 1px black;
+    margin: 40px;
+    padding: 10px;
+    width: 800px;
+    /* overflow: scroll; */
+    .div_box1 {
+      position: relative;
+      left: 500px;
+    }
+  }
+
+  .main_boxes {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: solid 1px black;
+    margin: 40px;
+    padding: 10px;
+    width: 800px;
+    /* overflow: scroll; */
+    .main_boxes .div_box1 {
+      position: relative;
+      left: 500px;
+    }
+  }
+  
