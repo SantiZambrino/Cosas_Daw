@@ -2,7 +2,9 @@
 
 
 function play() {
+    //guardo el intervalo en una variable
     interval= setInterval(intervalPlay, 2000);
+    //utilizo esa variable para cortarlo
     setTimeout(function() {clearInterval(interval)}, 6000);
 }
 
