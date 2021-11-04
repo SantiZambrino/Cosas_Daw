@@ -13,12 +13,13 @@ a{
 }
 
 .header-conteiner{
-    width: 100%;
-    height: 90px;
+    width: 98%;
+    height: 100px;
     background-color: #E4E4E4;
     position: relative;
     /* top: 1px; */
     left: 0;
+    margin: 1% 1%;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
@@ -43,8 +44,13 @@ a{
     display: inline-block;
     color: #1A293E;
     font-size: 2.6rem;
-    padding-right: 5px;
+    padding-right: 20px;
     word-spacing: -2px;
+    text-decoration: none;
+}
+
+.navegador ul a:hover{
+    color: #B2CAEE;
 }
 
 .nav-redes{
@@ -69,6 +75,9 @@ a{
 
 } 
 
+.main-conteiner{
+    margin: 1% 1%;
+}
 
 .main-conteiner .seccion1{
     position: relative;
@@ -88,16 +97,17 @@ a{
     background-image: url(../portfolio/img/SantiRecorte.png);
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-size: 90%;   
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    background-size: 90%;  
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); 
 }
 
 .main-conteiner .seccion1 h1{
     font-size: 10.0rem;
     position: relative;
-    top: 444px;
-    left: 75%;
+    top: 442px;
+    left: 73%;
     color: #E4E4E4;
+    width: 234px;
 }
 
 .main-conteiner .seccion2 h1{
@@ -106,23 +116,108 @@ a{
     top: 442px;
     right: -0.5%;
     color: #1A293E;
+    width: 296px;
 }
 
 .main-conteiner .seccion-aboutMe{
     width: 100%;
-    background-color: #38bdea;
+    background-color: #B2CAEE;
     height: 400px;
     position: relative;
     bottom: 893px;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    
 }
 
+.seccion-aboutMe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2% 0;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.main-conteiner .project{
+    width: 100%;
+    background-color: #D5DEEF;
+    height: 400px;
+    position: relative;
+    bottom: 893px;
+}
+.project{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2% 0;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+    
+
 .seccion-aboutMe div{
-    color: #1A293E;
-    width: 300px;
-    height: 300px;
+    color: #E4E4E4;
+    /* height: 300px; */
     font-size: 1.6rem;
     font-weight: 900;
     position: relative;
-    padding: 200px;
+    padding: 4rem;
+    background-color: #1A293E;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    line-height: 30px;
+}
+img{
+    width: 350px;
+    height: 350px;
+}
+
+
+/* Vista Ipad */
+@media screen and (max-width:810px){
+    .header-conteiner {
+        width: 96%;
+        height: 100px;
+        background-color: #E4E4E4;
+        position: relative;
+        top: 1px;
+        left: 6px;
+        margin: 1% 1%;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+    .nav-redes {
+        position: relative;
+        width: 230px;
+        height: 100%;
+        left: 70%;
+        bottom: 100%;
+    }
+
+    .main-conteiner {
+        margin: 1% 2%;
+    }
+
+    .main-conteiner .seccion1 h1 {
+        font-size: 10.0rem;
+        position: relative;
+        top: 442px;
+        left: 36%;
+        color: #E4E4E4;
+        width: 234px;
+    }
+
+    .main-conteiner .seccion-aboutMe {
+        width: 100%;
+        background-color: #B2CAEE;
+        height: 400px;
+        position: relative;
+        bottom: 868px;
+    }
+
+    .main-conteiner .project {
+        width: 100%;
+        background-color: #D5DEEF;
+        height: 400px;
+        position: relative;
+        bottom: 839px;
+    }
+
 }
