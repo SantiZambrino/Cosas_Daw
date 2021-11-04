@@ -11,7 +11,12 @@ html{
 a{
     text-decoration: none;
 }
+/* ---------------------------------
 
+    Header
+
+    ------------------------------------
+*/
 .header-conteiner{
     width: 98%;
     height: 100px;
@@ -74,7 +79,12 @@ a{
     height: 50px;
 
 } 
+/* ---------------------------------
 
+    Main
+
+    ------------------------------------
+*/
 .main-conteiner{
     margin: 1% 1%;
 }
@@ -94,7 +104,7 @@ a{
     left: 50%;
     height: 893px;
     background-color: #b2caeb;
-    background-image: url(../portfolio/img/SantiRecorte.png);
+    background-image: url(../portfolio1.5/img/SantiRecorte.png);
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: 90%;  
@@ -169,8 +179,12 @@ img{
     height: 350px;
 }
 
+/* ---------------------------------
 
-/* Vista Ipad */
+    Responsive Ipad
+
+    ------------------------------------
+*/
 @media screen and (max-width:810px){
     .header-conteiner {
         width: 96%;
