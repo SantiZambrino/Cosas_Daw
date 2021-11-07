@@ -12,9 +12,13 @@ window.onload = function() {
 
 function mover() {
      var dedo = document.getElementsByTagName('div')[0];
-     numero += 5;
-     if (numero < window.innerWidth - 175) {
-        dedo.style.left = numero +'px';   
+     var contenidoTotal = dedo.offsetWidth;
+     var salto = 5;
+ 
+     if ((numero + contenidoTotal) < (window.innerWidth - salto)) {
+            dedo.style.left = numero +'px';
+            numero += 5;
+            console.log(numero+contenidoTotal)
       } 
 }
 
@@ -23,8 +27,14 @@ function mover2() {
     var dedo = document.querySelector("div");
     var estilo = window.getComputedStyle(dedo);
     var actual = parseInt(estilo.getPropertyValue("left"));
+    var ancho = parseInt(estilo.getPropertyValue('width'));
+    var borde =  parseInt(estilo.getPropertyValue('border'));
+    var pading =  parseInt(estilo.getPropertyValue('padding'));
+    var margin =  parseInt(estilo.getPropertyValue('margin'));
     actual += salto;
-    dedo.style.left = actual +"px";
+    if (actual < window.outerWidth - (ancho + borde + pading + margin)) {
+        dedo.style.left = actual +"px";   
+    }
 }
 
 function mostrarDatos(params) {
@@ -40,17 +50,17 @@ function mostrarDatos(params) {
 //Objeto Screen: me da info de la pantalla del dispositivo
 
 
-console.log(screen.width); 
+// console.log(screen.width); 
 
-console.log(screen.availWidth); 
+// console.log(screen.availWidth); 
 
-console.log(screen.height); 
+// console.log(screen.height); 
 
 //No cuenta las barras del sistema operativo
-console.log(screen.availHeight); 
+// console.log(screen.availHeight); 
 
 //Profundidad de colores que se representa en la pantalla;
-console.log(screen.colorDepth);
+// console.log(screen.colorDepth);
 
 
 //Objeto Windows: hace referencia a la ventana del navegador
