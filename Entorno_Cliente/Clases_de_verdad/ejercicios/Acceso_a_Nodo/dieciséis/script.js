@@ -5,20 +5,38 @@ Usando las funciones setInterval y clearInterval de Javascript. Coloca una etiqu
 
 var timer;
 var salto = 2;
+var saltoMeter = 2; 
 
-// cargar.onclick = function() {
-    
-// }
-
-function cargarBoton() {
-    timer = setInterval("cargar()", 200);
+window.onload = function () {
+    var botonCarga = document.getElementsByTagName("button")[0];
+    var botonMeter = document.getElementsByTagName("button")[1];
+    botonCarga.onclick = function () {
+        timer = setInterval("cargar()", 200);
+    }
+    botonMeter.onclick = function() {
+        timer = setInterval("descargar()", 200);
+    }
 }
 
 function cargar() {
-    var botonCarga = document.getElementsByTagName("progress")[0]; 
-    console.log(botonCarga.max)
-    if (salto < botonCarga.max) {
+    var botonCarga = document.getElementsByTagName("progress")[0];
+    console.log(botonCarga.value);
+    if (botonCarga.value < botonCarga.max) {
         botonCarga.value = salto;
         salto += salto;
-    }        
+    }else{
+        botonCarga.value = botonCarga.max;
+        console.log("valor final: " + botonCarga.value);
+        clearInterval(timer);
+    }
+}
+
+function descargar() {
+    var meter = document.getElementsByTagName("meter")[0];
+    if (meter.value > meter.min) {
+        meter.value -= saltoMeter;
+    } else{
+        console.log("valor final: " + meter.value);
+        clearInterval(timer);
+    }
 }
