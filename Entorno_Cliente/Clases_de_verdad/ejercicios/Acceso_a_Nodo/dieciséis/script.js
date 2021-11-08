@@ -11,10 +11,17 @@ window.onload = function () {
     var botonCarga = document.getElementsByTagName("button")[0];
     var botonMeter = document.getElementsByTagName("button")[1];
     botonCarga.onclick = function () {
+        botonCarga.disabled = true;
         timer = setInterval("cargar()", 200);
+        botonCarga.disabled = false;
     }
     botonMeter.onclick = function() {
+        botonMeter.disabled = true;
         timer = setInterval("descargar()", 200);
+        if (condition) {
+            
+        }
+        botonMeter.disabled = false;
     }
 }
 
