@@ -14,7 +14,8 @@ function mover() {
      var dedo = document.getElementsByTagName('div')[0];
      var contenidoTotal = dedo.offsetWidth;
      var salto = 5;
- 
+
+    //Modificar el numero, la posicion del div puede ser diferente
      if ((numero + contenidoTotal) < (window.innerWidth - salto)) {
             dedo.style.left = numero +'px';
             numero += 5;

@@ -1,0 +1,48 @@
+1) Crear un nodo de tipo deseado
+Crear un parrafo dentro de un article
+
+2)Este punto es opcional Colocar los atributos(html(id, clase, value, name, type, src, href...)) necesarios (Si hace falta)
+
+3)(opcional) Si el nodo tiene texto;
+    .Crear texto.
+    .Enganchar al nodo.
+
+4) Enganchar el nodo en donde quiera.
+
+function crear(){
+    1) var nuevo = document.createElement("P");
+    2) nuevo.aling = "center";
+        nuevo.className = "soyUnaClase";/nuevo.setAttribute('align','center');
+    3.a) var texto = prompt("Mete texto: ", " ");
+    3.b) var nodoTexto = document.createTextNode(texto);
+        nuevo.appendChild(nodoTexto); //engancha el nodo texto a la etiqueta que estoy crendo
+    4) var papi = document.queryselector("article");
+        papi.appendChild(nuevo);    //Siempre lo coloca al final
+        
+        var hermano = d.getElementbyId("cabecera");
+        papi.insertBefore(nuevo, hermano); // lo incerta antes del div que hay dentro del article
+}
+
+
+//Borrar Nodos
+1 LLegar al padre del nodo a Borrar
+2 Borrar el nodo desde el padre
+
+function borrar(){
+    1) var papi = d.queryselector("article");
+       var elemeto = d.getElementbyTagName(p);
+    2) papi.removeChild(elemeto[0]);//elimino el primer hijo
+
+    //otra forma
+    1) var elemeto = d.getElementsbyTagName(p);
+       var papi = elemento[0].parentNode; //Te da el elemeto padre. 
+    2) papi.removeChild(elemeto[0]);//elimino el primer hijo
+
+    //otra forma
+    var papi = d.qs('article');
+    var hijos = papi.children; // da una lista de hijos.
+    //el while es como un iterador. borra todo los hijos 
+    while(papi.firstChild){
+        papi.remove(papi.firstChild);
+    }
+}

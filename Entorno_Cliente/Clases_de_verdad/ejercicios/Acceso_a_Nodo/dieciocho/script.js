@@ -2,7 +2,7 @@ var timer;
 var salto = 2;
 var saltoMeter = 2; 
 var sumaMonedas = 1;
-var sumatotal = 0;
+var monedaNumero = 0;
 
 window.onload = function () {
     var barraProgreso = document.getElementsByTagName("button")[0];
@@ -31,10 +31,14 @@ function cargar() {
         salto += salto;
     }else {  
         barraProgreso.value = barraProgreso.max;
-        // parseInt(moneda.innerHTML) +=  sumaMonedas;  
+        monedaNumero = parseInt(moneda.textContent);
+        monedaNumero += sumaMonedas;
+        moneda.textContent = monedaNumero;
         console.log("valor final: " + barraProgreso.value);
         clearInterval(timer);
         botonProgreso.disabled = false;
+        barraProgreso.value = 0;
+        salto = 2;
     }
 
 }
