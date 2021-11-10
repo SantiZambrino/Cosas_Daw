@@ -4,13 +4,15 @@ Generar: cada vez que se pulse, crea un nuevo párrafo similar al que ya existe 
 Borrar Viejo: elimina el párrafo que sale por defecto en la página. Al hacer eso,este botón y el botón ‘Sustituir’ quedan bloqueados.
 
 Borrar Nuevos: este botón está bloqueado al principio y se desbloquea al pulsarel botón ‘Generar’. Su cometido es borrar TODOS los párrafos generados por el botón generar.
+
+Sustituir: este botón sustituye el párrafo inicial por una tabla de dos filas y dos celdas con números en su interior. Recuerda que este botón estará bloqueado si se borra el párrafo inicial con el botón ‘Borrar Viejo’.
 */
 
-window.onload = function() {
-  var botones = document.getElementsByTagName("button");  
+window.onload = function () {
+  var botones = document.getElementsByTagName("button");
 
   //Generar
-  botones[0].onclick = function() {
+  botones[0].onclick = function () {
     var nuevoP = document.createElement("p");
     nuevoP.classList.add('clase2');
 
@@ -19,14 +21,14 @@ window.onload = function() {
     var nodoTexto = document.createTextNode(texto);
     nuevoP.appendChild(nodoTexto);
 
-    //Agragar al nodo padre
-    var whosYourDaddy = document.body;
+    //Agregar al nodo padre
+    var whosYourDaddy = document.querySelector('div');
     whosYourDaddy.appendChild(nuevoP)
     botones[2].disabled = false;
   }
 
   //Borrar viejo
-  botones[1].onclick = function(){
+  botones[1].onclick = function () {
     var elementoP = document.getElementsByTagName('p')[0];
     var whosYourDaddy = document.body;
     whosYourDaddy.removeChild(elementoP);
@@ -35,22 +37,35 @@ window.onload = function() {
   }
 
   //Boton nuevo
-  botones[2].onclick = function() {
-    let papi = document.body;
-    let hijos = papi.children
-
-    while (papi.classList.contains("clase2")) {
-        papi.removeChild(hijos.classList.contains("clase2"));
+  botones[2].onclick = function () {
+    let papi = document.querySelector('div');
+    let hijos = papi.children;
+    console.log(hijos);
+    while (papi.firstChild) {
+      papi.removeChild(papi.firstChild);
     }
+  }
 
-    //   var papi = document.body;
-    //   var hijos = document.getElementsByClassName('clase2');
-    //   var i = 0
-   
-    //   while (papi) {
-    //       papi.removeChild(hijos[i]);
-    //       i++;
-    //   }
-  
+  //Sustituir
+  botones[3].onclick = function () {
+    //Obtengo el nodo padre
+    var padre = document.querySelector('div');
+    //Creo la tabla
+    var nuevoTable = document.createElement("table");
+    var tblBody = document.createElement("tbody");
+    
+    // nuevoTable.className = 'clase2';
+    for (var i = 0; i < 2; i++) {
+      var fila = document.createElement('tr');
+      for (var y = 0; y < 2; y++) {
+        var columna = document.createElement('td');
+        var textoColumna = document.createTextNode(i + "" + y);
+        columna.appendChild(textoColumna);
+        fila.appendChild(columna);
+      }
+      tblBody.appendChild(nuevoTable);
+    }
+    nuevoTable.appendChild(tblBody);
+    padre.appendChild(nuevoTable);
   }
 }
