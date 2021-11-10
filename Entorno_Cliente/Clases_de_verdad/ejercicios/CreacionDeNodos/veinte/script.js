@@ -14,58 +14,77 @@ window.onload = function () {
   //Generar
   botones[0].onclick = function () {
     var nuevoP = document.createElement("p");
-    nuevoP.classList.add('clase2');
+    nuevoP.classList.add("clase2");
 
     //agrego texto
-    var texto = document.getElementsByTagName('p')[0].textContent;//Copio el contenido del primer parrafo
+    var texto = document.getElementsByTagName("p")[0].textContent; //Copio el contenido del primer parrafo
     var nodoTexto = document.createTextNode(texto);
     nuevoP.appendChild(nodoTexto);
 
     //Agregar al nodo padre
-    var whosYourDaddy = document.querySelector('div');
-    whosYourDaddy.appendChild(nuevoP)
+    var whosYourDaddy = document.querySelector("div");
+    whosYourDaddy.appendChild(nuevoP);
     botones[2].disabled = false;
-  }
+  };
 
   //Borrar viejo
   botones[1].onclick = function () {
-    var elementoP = document.getElementsByTagName('p')[0];
+    var elementoP = document.getElementsByTagName("p")[0];
     var whosYourDaddy = document.body;
     whosYourDaddy.removeChild(elementoP);
     botones[1].disabled = true;
     botones[3].disabled = true;
-  }
+  };
 
   //Boton nuevo
   botones[2].onclick = function () {
-    let papi = document.querySelector('div');
+    let papi = document.querySelector("div");
     let hijos = papi.children;
     console.log(hijos);
     while (papi.firstChild) {
       papi.removeChild(papi.firstChild);
     }
-  }
+  };
 
   //Sustituir
   botones[3].onclick = function () {
     //Obtengo el nodo padre
-    var padre = document.querySelector('div');
+    var padre = document.querySelector("div");
     //Creo la tabla
     var nuevoTable = document.createElement("table");
-    var tblBody = document.createElement("tbody");
-    
-    // nuevoTable.className = 'clase2';
+    var cuerpoTabla = document.createElement("tbody");
+    //clase de la tabla
+    nuevoTable.className = "clase1";
+
+    //creo la fila
     for (var i = 0; i < 2; i++) {
-      var fila = document.createElement('tr');
+      var fila = document.createElement("tr");
       for (var y = 0; y < 2; y++) {
-        var columna = document.createElement('td');
-        var textoColumna = document.createTextNode(i + "" + y);
+        //Creo las columnas
+        var columna = document.createElement("td");
+        //Creo un nodo de texto
+        var textoColumna = document.createTextNode(i);
+        //lo incerto en la columna
         columna.appendChild(textoColumna);
+        //incerto la columna en el texto
         fila.appendChild(columna);
       }
-      tblBody.appendChild(nuevoTable);
+      //incerto la fila en el cuerpo de la tabla
+      cuerpoTabla.appendChild(fila);
     }
-    nuevoTable.appendChild(tblBody);
-    padre.appendChild(nuevoTable);
-  }
-}
+
+    //Incerto el cuerpo de la tabla a la tabla
+    nuevoTable.appendChild(cuerpoTabla);
+    //doy estilo a la tabla
+    nuevoTable.setAttribute("border", 2);
+    nuevoTable.style.textAlign = "center";
+    //apunto al body
+    var whosYourDaddy = document.body;
+    //busco el primer elemento p
+    var original = document.getElementsByTagName("p")[0];
+    //Incerto la tabla antes del elemento p
+    whosYourDaddy.insertBefore(nuevoTable, original);
+    //Borro el elemento p
+    whosYourDaddy.removeChild(original);
+  };
+};
