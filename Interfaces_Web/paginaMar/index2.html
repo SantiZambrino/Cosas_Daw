@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: Aquatico;
+            src: url(Aquatico-Regular.otf);
+        }
+        body{
+            background-color: aqua;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        video{
+            position: relative;
+            left: 15%;
+        }
+        h1{
+            font-family: Aquatico;
+            z-index: 9;
+        }
+        #videoFondo{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            filter: blur(10px);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Aventuras en el Mar</h1>
+    <audio autoplay>
+        <source src="../paginaMar/583597__tonyg74__malta-north-coast-sea-on-rocks.m4a" type="audio/mpeg">
+    </audio>
+    <video muted autoplay loop id="videoFondo">
+        <source src="../paginaMar/Ruta en Kayak Nerja Maro 2015.mp4" type="video/mp4">
+    </video>
+    <video muted autoplay loop>
+        <source src="../paginaMar/Ruta en Kayak Nerja Maro 2015.mp4" type="video/mp4">
+    </video>
+</body>
+</html>

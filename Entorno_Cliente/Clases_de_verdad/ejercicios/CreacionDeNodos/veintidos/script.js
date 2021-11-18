@@ -28,7 +28,7 @@ window.onload = function() {
     elementoIMG.style.setProperty('position', 'absolute');
     elementoIMG.style.setProperty('top', '10px');
     elementoIMG.style.setProperty('left', '10px');
-    
+
 
 
     elementoIMG.onclick = function() {
@@ -40,9 +40,10 @@ window.onload = function() {
         console.log({anchoImagen});
     }
 
-    imagenDiv.onclick = function() {
+    divNuevo.onclick = function() {
         papi.removeChild(divNuevo);
-        papi.removeChild(imagenDiv);
+        // papi.removeChild(imagenDiv);
+        imagenDiv.parentNode.removeChild(imagenDiv);
     }
 
 }
