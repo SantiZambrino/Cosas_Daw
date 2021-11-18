@@ -11,7 +11,8 @@ function avanzar() {
     if (contador == 6) {
         contador = 1;
     }
-    elemento[0].src = `./img/goku${contador}.png`;     
+    elemento[0].src = `./img/goku${contador}.png`;  
+    elemento[0].src = './img/goku'+ contador + '.png';   
 }
 
 function retroceder() {
