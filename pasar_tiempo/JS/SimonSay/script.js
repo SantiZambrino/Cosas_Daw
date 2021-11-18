@@ -1,66 +1,64 @@
-window.onload = function () {
-    const boton = document.getElementsByTagName("button")[0];
-    const finger = document.getElementsByTagName("div"); 
-    const jugadaMaquina = new Array();
-    let numeroJugada;
-    let randomColor;
+window.onload = () => {
+  const boton = document.getElementsByTagName("button")[0];
+  const fingers = document.getElementsByTagName("div");
+  const jugadaMaquina = new Array();
+  const colores = ['black', 'green', 'yellow', 'red', 'blue'];
+  let jugar = true;
+  let numeroJugada;
+  let randomColor;
 
-    finger[1].style.backgroundColor = "green"; 
-    finger[2].style.backgroundColor = "red";
-    finger[3].style.backgroundColor = "yellow"; 
-    finger[4].style.backgroundColor = "blue"; 
+  for (let i = 0; i < fingers.length; i++) {
+    fingers[i].style.backgroundColor = colores[i];
+  }
 
-    boton.onclick = function () {
-        //guardo el intervalo en una variable
-        interval = setInterval(intervalPlay, 2000);
-        //utilizo esa variable para cortarlo
-        setTimeout(function () {
-        clearInterval(interval);
-        }, 6000);
-    };
+  boton.onclick = play;
 
-    function intervalPlay() {
-        for (let i = 0; i < 1; i++) {
-          randomColor = Math.floor(Math.random() * 4) + 1;
-          console.log({randomColor});
-          jugadaMaquina.push(randomColor);
-          console.log({jugadaMaquina});
-          switch (randomColor) {
-            case 1:
-              setTimeout(function () {
-                finger[1].style.setProperty("opacity", "0.4");
-              }, 2000);
-              setTimeout(function () {
-                finger[1].style.setProperty("opacity", "1");
-              }, 3000);
-              break;
-            case 2:
-              setTimeout(function () {
-                finger[2].style.setProperty("opacity", "0.4");
-              }, 2200);
-              setTimeout(function () {
-                finger[2].style.setProperty("opacity", "1");
-              }, 3200);
-              break;
-            case 3:
-              setTimeout(function () {
-                finger[3].style.setProperty("opacity", "0.4");
-              }, 2400);
-              setTimeout(function () {
-                finger[3].style.setProperty("opacity", "1");
-              }, 3400);
-              break;
-            case 4:
-              setTimeout(function () {
-                finger[4].style.setProperty("opacity", "0.4");
-              }, 3600);
-              setTimeout(function () {
-                finger[4].style.setProperty("opacity", "1");
-              }, 4600);
-              break;
-          }
-        }
-      }
+
+  function intervalPlay() {
+    randomColor = Math.floor(Math.random() * 4) + 1;
+    console.log({ randomColor });
+    switch (randomColor) {
+      case 1:
+        setTimeout(()=> {
+          fingers[1].style.setProperty("opacity", "0.4");
+        }, 200);
+        setTimeout(()=> {
+          fingers[1].style.setProperty("opacity", "1");
+        }, 400);
+        break;
+      case 2:
+        setTimeout(()=> {
+          fingers[2].style.setProperty("opacity", "0.4");
+        }, 220);
+        setTimeout(()=> {
+          fingers[2].style.setProperty("opacity", "1");
+        }, 420);
+        break;
+      case 3:
+        setTimeout(()=> {
+          fingers[3].style.setProperty("opacity", "0.4");
+        }, 240);
+        setTimeout(()=> {
+          fingers[3].style.setProperty("opacity", "1");
+        }, 440);
+        break;
+      case 4:
+        setTimeout(()=> {
+          fingers[4].style.setProperty("opacity", "0.4");
+        }, 460);
+        setTimeout(()=> {
+          fingers[4].style.setProperty("opacity", "1");
+        }, 560);
+        break;
+    }
+  }
+
+  function play() {
+    //guardo el intervalo en una variable
+    interval = setInterval(intervalPlay, 2000);
+    //utilizo esa variable para cortarlo
+    setTimeout(()=> {
+      clearInterval(interval);
+    }, 8500);
+  }
 };
-
-
