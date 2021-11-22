@@ -1,9 +1,20 @@
 /*
-  Nada más cargar la página se pedirá al usuario el número total de plantas que
-  tiene el edificio (entre 1 y 8). Es necesario controlar que ese valor leído es correcto.
-  */
+Ejemplo de uso:
+	console.log('Descansando...');
+  	sleep(2000);
+  	console.log('Dos segundos despues');
+*/
+function sleep(milliseconds) {
+ var start = new Date().getTime();
+ for (var i = 0; i < 1e7; i++) {
+  if ((new Date().getTime() - start) > milliseconds) {
+   break;
+  }
+ }
+}
+//----------------------------------------------------------------------------------------
 
-window.onload = () => {
+function empezar(){
     let plantasTotales;
     let plantas;
     let nodoTexto;
@@ -13,16 +24,14 @@ window.onload = () => {
     let eleccionPlantaUsu;
     let mensaje;
     let contenidoPlanta;
-    let subir;
+    // do {
+    //     if (plantasTotales < 1 || plantasTotales > 8)
+    //     alert('ERROR NUMERO SUPERIOR A 8 O INFERIOR A 0');
 
-    do {
-        if (plantasTotales < 1 || plantasTotales > 8)
-        alert('ERROR NUMERO SUPERIOR A 8 O INFERIOR A 0');
+    //     plantasTotales = parseInt(prompt("Dime un numero de plantas entre 1 y 8;"))    
 
-        plantasTotales = parseInt(prompt("Dime un numero de plantas entre 1 y 8;"))    
-
-    } while (plantasTotales < 1 || plantasTotales > 8);
-    // plantasTotales = 5;
+    // } while (plantasTotales < 1 || plantasTotales > 8);
+    plantasTotales = 5;
 
     //desabilito los botones
     botones = document.getElementsByTagName('input');
@@ -49,7 +58,9 @@ window.onload = () => {
         papi.appendChild(plantas);
     }
 
-    //Muevo el acensor eligiendo a que planta quiero
+    /*
+    n caso contrario, el ascensor se mueve de una planta a otra.
+    */
     botones[0].onclick = () => {
         botones = document.getElementsByTagName('input');
         botones[1].disabled = false;
@@ -72,47 +83,9 @@ window.onload = () => {
         else if (eleccionPlantaUsu == contenidoPlanta) alert('estas en la misma planta');// idea de Josemi, yo queria compar los colores del backGround;
         else
             cambiarPlanta(eleccionPlantaUsu);
-            if (contenidoPlanta < eleccionPlantaUsu) {
-                console.log('subiendo...');
-                for (let i = contenidoPlanta; i <= eleccionPlantaUsu; i++) {
-                    sleep(1000);
-                    console.log(`Planta: ${i}`);
-                }
-            }
-            else if(contenidoPlanta > eleccionPlantaUsu){
-                console.log('bajando...');
-                for (let i = contenidoPlanta; i >= eleccionPlantaUsu; i--) {
-                    sleep(1000);
-                    console.log(`Planta: ${i}`);
-                }
-            }
     }
 
-    //Borra las plantas del ascensor
     botones[1].onclick = () =>{
-        borrar();
-    }
-
-    function cambiarPlanta(eleccionPlantaUsu) {
-        spanes = document.getElementsByTagName('span')[0];
-        contenidoPlanta = parseInt(spanes.textContent);
-        plantas = document.getElementsByClassName('planta');
-        spanes = document.getElementsByTagName('span');
-        let cantidadP =plantas.length; 
-        console.log({cantidadP})
-        console.log({contenidoPlanta})
-        plantas[plantas.length - contenidoPlanta].style.backgroundColor = 'white',
-        plantas[plantas.length - contenidoPlanta].style.border = 'none',
-        plantas[plantasTotales - eleccionPlantaUsu].style.setProperty('border', '4px solid black'),
-        plantas[plantasTotales - eleccionPlantaUsu].style.backgroundColor = 'yellow',
-        spanes[0].innerHTML = eleccionPlantaUsu;
-        if (contenidoPlanta < eleccionPlantaUsu) 
-        return console.log(`subiendo de la planta ${contenidoPlanta}º a la planta ${eleccionPlantaUsu}`);
-        else 
-        return console.log(`bajando de la planta ${contenidoPlanta}º a la planta ${eleccionPlantaUsu}`);
-    }
-
-    function borrar() {
         spanes = document.getElementsByTagName('span')[0];
         spanes.innerHTML = 'X';
         papi = document.getElementById('ascensor');
@@ -122,18 +95,19 @@ window.onload = () => {
         botones[1].disabled = true;
     }
 
-    /*
-    Ejemplo de uso:
-	console.log('Descansando...');
-  	sleep(2000);
-  	console.log('Dos segundos despues');
-    */
-    function sleep(milliseconds) {
-        var start = new Date().getTime();
-        for (var i = 0; i < 1e7; i++) {
-         if ((new Date().getTime() - start) > milliseconds) {
-          break;
-         }
-        }
+    function cambiarPlanta(eleccionPlantaUsu) {
+        spanes = document.getElementsByTagName('span')[0];
+        contenidoPlanta = parseInt(spanes.textContent);
+        plantas = document.getElementsByClassName('planta');
+        spanes = document.getElementsByTagName('span');
+        plantas[plantas.length - contenidoPlanta].style.backgroundColor = 'white',
+        plantas[plantas.length - contenidoPlanta].style.border = 'none',
+        plantas[plantasTotales - eleccionPlantaUsu].style.setProperty('border', '4px solid black'),
+        plantas[plantasTotales - eleccionPlantaUsu].style.backgroundColor = 'yellow',
+        spanes[0].innerHTML = eleccionPlantaUsu;
+        if (contenidoPlanta < eleccionPlantaUsu) 
+        return console.log(`subiendo de la planta ${contenidoPlanta}º a la planta ${eleccionPlantaUsu}`);
+        else 
+        return console.log(`bajando de la planta ${contenidoPlanta}º a la planta ${eleccionPlantaUsu}`);
     }
 }
