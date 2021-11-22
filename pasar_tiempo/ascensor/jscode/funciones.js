@@ -71,10 +71,13 @@ window.onload = () => {
                 cambiarPlanta(eleccionPlantaUsu);
         else if (eleccionPlantaUsu == contenidoPlanta) alert('estas en la misma planta');// idea de Josemi, yo queria compar los colores del backGround;
         else
+  
             cambiarPlanta(eleccionPlantaUsu);
             if (contenidoPlanta < eleccionPlantaUsu) {
                 console.log('subiendo...');
                 for (let i = contenidoPlanta; i <= eleccionPlantaUsu; i++) {
+                    let audio = document.getElementsByTagName('audio')[0];
+                    audio.play();
                     sleep(1000);
                     console.log(`Planta: ${i}`);
                 }
@@ -82,6 +85,8 @@ window.onload = () => {
             else if(contenidoPlanta > eleccionPlantaUsu){
                 console.log('bajando...');
                 for (let i = contenidoPlanta; i >= eleccionPlantaUsu; i--) {
+                    let audio = document.getElementsByTagName('audio')[0];
+                    audio.play();
                     sleep(1000);
                     console.log(`Planta: ${i}`);
                 }
