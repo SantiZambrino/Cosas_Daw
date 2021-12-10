@@ -1,0 +1,38 @@
+Funciones que van a trabajar con Array
+
+callback: funciones como parametros de funciones.
+
+ej
+
+
+var lista = [2,3,4,18,19,20,21,23,0,2,5,69]
+
+function mayorEdad(e){
+  return e >= 18;   
+}
+
+var res = lista.some(mayorEdad//la funcion debe devolver un booleano);//devuelve verdadero o falso si un elemento cumple la funcion 
+ver res = lista.every(mayorEdad//la funcion debe devolver un booleano);//devuelve verdadero si todos los elementos cumplen la funcion
+
+res = lista.some(function(e){
+    return e >= 18;
+});
+
+
+Asi se recorren los Array en JS
+
+Foreach// solo para Array, tiene una limitacion importante no puede devolver nada, no va a dar ningun problema pero no va a funcionar
+function mostrar(e){
+    e*=2;
+    c.log(e)
+}
+
+//
+lista.foreach(mostrar)
+
+lista.map() //es un foreach petado, puede devolver el return. Me crea otro array con los resultados del return.
+
+var otra= lista.map(nuevo);
+function nuevo(e){
+    return 2*e;
+}
