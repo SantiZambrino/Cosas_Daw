@@ -77,6 +77,8 @@ window.onload = () => {
             else if(contenidoPlanta > eleccionPlantaUsu){
                 console.log('bajando...');
                 for (let i = contenidoPlanta; i >= eleccionPlantaUsu; i--) {
+                    // let audio = document.getElementsByTagName('audio')[0];
+                    // audio.play();
                     sleep(1000);
                     console.log(`Planta: ${i}`);
                 }
