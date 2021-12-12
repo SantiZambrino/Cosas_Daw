@@ -43,6 +43,6 @@ function borrar(){
     var hijos = papi.children; // da una lista de hijos.
     //el while es como un iterador. borra todo los hijos 
     while(papi.firstChild){
-        papi.remove(papi.firstChild);
+        papi.removeChild(papi.firstChild);
     }
 }

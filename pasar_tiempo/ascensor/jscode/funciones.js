@@ -1,8 +1,3 @@
-/*
-  Nada más cargar la página se pedirá al usuario el número total de plantas que
-  tiene el edificio (entre 1 y 8). Es necesario controlar que ese valor leído es correcto.
-  */
-
 window.onload = () => {
     let plantasTotales;
     let plantas;
@@ -13,7 +8,6 @@ window.onload = () => {
     let eleccionPlantaUsu;
     let mensaje;
     let contenidoPlanta;
-    let subir;
 
     do {
         if (plantasTotales < 1 || plantasTotales > 8)
@@ -31,15 +25,15 @@ window.onload = () => {
     //Creo las plantas con la forma b;
     for (let i = plantasTotales; i > 0; i--) {
         plantas = document.createElement('div');
-
+        // Cuando se cree la planta 1 le doy estilos propios
         if (i == 1)
-            // plantas.style.border = '4px solid black',
-            plantas.style.setProperty('border', '4px solid black'),
-                plantas.style.backgroundColor = 'yellow',
-                spanes = document.getElementsByTagName('span'),
-                spanes[0].innerHTML = `${i}`,
-                spanes[1].innerHTML = 'Planta',
-                botones[0].disabled = false;
+            plantas.style.border = '4px solid black',
+            plantas.style.backgroundColor = 'yellow',
+            //Cambio el texto del cuadro que indica en que planta estoy
+            spanes = document.getElementsByTagName('span'),
+            spanes[0].innerHTML = `${i}`,
+            spanes[1].innerHTML = 'Planta',
+            botones[0].disabled = false;
 
         plantas.className = 'planta';
 
@@ -53,11 +47,12 @@ window.onload = () => {
     botones[0].onclick = () => {
         botones = document.getElementsByTagName('input');
         botones[1].disabled = false;
+        //elijo la planta a la que quiero ir
         mensaje = 'Elija la planta a la que quiera ir.';
         mensaje += `\nOpciones desde la 1º planta hasta la ${plantasTotales}º planta: `;
-        eleccionPlantaUsu = parseInt(prompt(mensaje));
-        spanes = document.getElementsByTagName('span')[0];
-        contenidoPlanta = parseInt(spanes.textContent);
+        eleccionPlantaUsu = parseInt(prompt(mensaje));//opcion de usuario
+        spanes = document.getElementsByTagName('span')[0];//Texto para mostrar en que planta estoy
+        contenidoPlanta = parseInt(spanes.textContent);//variable que utilizo para guardar el numero de la planta en la que estoy
         plantas = document.getElementsByClassName('planta');
         spanes = document.getElementsByTagName('span');
 
@@ -71,13 +66,10 @@ window.onload = () => {
                 cambiarPlanta(eleccionPlantaUsu);
         else if (eleccionPlantaUsu == contenidoPlanta) alert('estas en la misma planta');// idea de Josemi, yo queria compar los colores del backGround;
         else
-  
             cambiarPlanta(eleccionPlantaUsu);
             if (contenidoPlanta < eleccionPlantaUsu) {
                 console.log('subiendo...');
                 for (let i = contenidoPlanta; i <= eleccionPlantaUsu; i++) {
-                    let audio = document.getElementsByTagName('audio')[0];
-                    audio.play();
                     sleep(1000);
                     console.log(`Planta: ${i}`);
                 }
@@ -85,8 +77,6 @@ window.onload = () => {
             else if(contenidoPlanta > eleccionPlantaUsu){
                 console.log('bajando...');
                 for (let i = contenidoPlanta; i >= eleccionPlantaUsu; i--) {
-                    let audio = document.getElementsByTagName('audio')[0];
-                    audio.play();
                     sleep(1000);
                     console.log(`Planta: ${i}`);
                 }
@@ -99,30 +89,37 @@ window.onload = () => {
     }
 
     function cambiarPlanta(eleccionPlantaUsu) {
+        //Marco los elementos que voy a utilizar
         spanes = document.getElementsByTagName('span')[0];
         contenidoPlanta = parseInt(spanes.textContent);
         plantas = document.getElementsByClassName('planta');
         spanes = document.getElementsByTagName('span');
+        //Compruebo que me devuelve los datos que necesito
         let cantidadP =plantas.length; 
         console.log({cantidadP})
         console.log({contenidoPlanta})
+        //Cambio el color de la planta que he elegido y vuelvo los valores por defecto de la planta en la que estaba
         plantas[plantas.length - contenidoPlanta].style.backgroundColor = 'white',
         plantas[plantas.length - contenidoPlanta].style.border = 'none',
         plantas[plantasTotales - eleccionPlantaUsu].style.setProperty('border', '4px solid black'),
         plantas[plantasTotales - eleccionPlantaUsu].style.backgroundColor = 'yellow',
         spanes[0].innerHTML = eleccionPlantaUsu;
+
         if (contenidoPlanta < eleccionPlantaUsu) 
-        return console.log(`subiendo de la planta ${contenidoPlanta}º a la planta ${eleccionPlantaUsu}`);
+        console.log(`subiendo de la planta ${contenidoPlanta}º a la planta ${eleccionPlantaUsu}º`);
         else 
-        return console.log(`bajando de la planta ${contenidoPlanta}º a la planta ${eleccionPlantaUsu}`);
+        console.log(`bajando de la planta ${contenidoPlanta}º a la planta ${eleccionPlantaUsu}º`);
     }
 
     function borrar() {
+        //Selecciono los elementos
         spanes = document.getElementsByTagName('span')[0];
         spanes.innerHTML = 'X';
         papi = document.getElementById('ascensor');
+        //Recorro el interior del elemento padre mientras tenga un primer hijo y los borro
         while(papi.firstChild)
         papi.removeChild(papi.firstChild);
+        //Deshabilito los botones
         botones[0].disabled = true;
         botones[1].disabled = true;
     }
