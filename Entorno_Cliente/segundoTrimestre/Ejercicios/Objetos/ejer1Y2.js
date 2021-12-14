@@ -56,12 +56,15 @@ window.onload = function () {
             console.log(Santi[clave].nombre)
         }else if (clave == 'asignaturas') {
             nuevoP.textContent += `${clave}: `;
+            let texto = "";
             for (const contenido of Santi.asignaturas) {
-                nuevoP.textContent += `${contenido.nombre}, `;
-                
+                texto += `${contenido.nombre}, `
             }
-            nuevoP.textContent += nuevoP.textContent.substring(0, nuevoP.textContent -1);
-            // texto.substring(0, (texto)-2);
+            let textoFinal = texto.replace("diseño,","diseño.");
+            nuevoP.textContent += textoFinal;
+        } else if(clave == 'notaMedia'){
+            let notaMedia = media();
+            nuevoP.textContent = `Nota Media: ${notaMedia}`;
         }
         else{
             nuevoP.textContent += `${clave}: ${Santi[clave]}`;
@@ -69,5 +72,15 @@ window.onload = function () {
         papi.appendChild(nuevoP);
     }
 }
-// }
+
+
+function media() {
+    let suma = 0;
+    let media = Santi.notaMedia;  
+    media.forEach(element => {
+        suma += element;
+    });
+    console.log(suma)
+    return suma / media.length;
+}
 
