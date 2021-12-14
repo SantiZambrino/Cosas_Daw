@@ -1,0 +1,13 @@
+.central{
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.central p{
+    /* display: ; */
+    margin: 2rem;
+    background-color: blanchedalmond;
+}

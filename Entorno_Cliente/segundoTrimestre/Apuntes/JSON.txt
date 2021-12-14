@@ -1,0 +1,82 @@
+JSON(Java script object notation)
+
+var usuarios = [
+    "Juan", "Fran", "Carlos", "Santi"
+];
+
+//Ejemplo
+
+var temperaturas = [
+    [17, 22, 13],
+    [27, 21, 23],
+    [18, 12,15]
+];
+
+//Objetos(No programacion orientada a Objetos)
+
+A tener en cuenta: empieza por llaves. El ultimo no lleva coma
+
+var alumno = {
+    nombre: "Juan",
+    edad: 23,
+    dni: "73627192S",
+    asignatura:["Clientes", "Servidor", "Interfaces"]
+    mentor: {
+        nombre: "Jaime",
+        edad: 28,
+        sueldo: 1200,
+        ciclo: ["Daw", "Dam", "3D"]
+    }
+}
+
+//sacar nombre
+c.log(alumno.nombre)
+//Cambiar edad
+alumno.edad = 21;
+
+//Recorrer con for si tiene un array dentro
+
+alumno.asignatura.foreach(function(e){
+    console.log(e);
+})
+
+for(let i = 0; i < alumno.asignatura.length; i++){
+    c.log(alumno.asignatura[i])
+}
+
+//Recorrer ciclo
+for(let i = 0; i < alumno.mentor.ciclo.length; i++){
+    c.log(alumno.mentor.ciclo[i])
+}
+
+
+//Forma de recorrer objetos 
+For in 
+
+for(let clave in alumno){//Salen los campos
+    console.log(clave +"tiene"+ alumno[clave]);
+}
+
+//llegar a mentor
+
+for(let clave in alumno){
+    if(clave == 'mentor'){
+        for(let in alumno[clave]){
+            c.log(otra + "tiene" + alumno[clave][otra])
+        }
+    } else{
+        c.log(clave + "tiene"+alumno[clave])
+    }
+}
+
+//For of(es para array)
+
+for(let num in alumno.asignatura){
+    c.log(num)//si hago esto me sale las posiciones del array
+    c.log(alumnos.asignatura[num])// me muestra el contenido
+}
+
+//Con for of salen los valores de las celdas
+for(let num of alumno.asignaturas){
+    c.log(num)
+}
