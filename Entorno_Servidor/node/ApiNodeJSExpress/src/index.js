@@ -4,12 +4,17 @@ const morgan=require('morgan');
 
 //Configuraciones
 app.set('port', process.env.PORT || 3000);
-app.set('json spaces', 2)
+app.set('json spaces', 2);
 
-//Middleware
-app.use(morgan('dev'));
-app.use(express.urlencoded({extended:false}));
-app.use(express.json());
+// //Middleware
+// app.use(morgan('dev'));
+// app.use(express.urlencoded({extended:false}));
+// app.use(express.json());
+
+
+
+//Routes
+app.use(require('./routes/index'));
 
 // app.get('/', (req, res) => {    
 //     res.json(
@@ -24,5 +29,4 @@ app.listen(app.get('port'),()=>{
     console.log(`Server listening on port ${app.get('port')}`);
 });
 
-//Routes
-app.use(require('./routes/index'));
+

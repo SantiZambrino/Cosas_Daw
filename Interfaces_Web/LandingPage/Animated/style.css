@@ -1,0 +1,67 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: purple;
+    animation-duration: 15s;
+    animation-direction: reverse;
+    animation-iteration-count: 10;
+}
+h2{
+    color: royalblue;
+}
+img{
+    animation: acercar 1s infinite;
+}
+
+body{
+    background-image: url(pngegg.png) ;
+    background-size: 400px;
+    animation-name: rotation;
+}
+
+@-webkit-keyframes acercar {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+}
+
+@keyframes acercar {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+}
+
+
+/* Rotacion */
+
+
+.rotated{
+	animation-name: rotation;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+

@@ -60,11 +60,11 @@ window.onload = function () {
             for (const contenido of Santi.asignaturas) {
                 texto += `${contenido.nombre}, `
             }
-            let textoFinal = texto.replace("diseño,","diseño.");
-            nuevoP.textContent += textoFinal;
+            texto = texto.substring(0, texto.length-2);
+            texto += "."
+            nuevoP.textContent += texto;
         } else if(clave == 'notaMedia'){
-            let notaMedia = media();
-            nuevoP.textContent = `Nota Media: ${notaMedia}`;
+            nuevoP.textContent = `Nota Media: ${media()}`;
         }
         else{
             nuevoP.textContent += `${clave}: ${Santi[clave]}`;
@@ -84,3 +84,11 @@ function media() {
     return suma / media.length;
 }
 
+function mostrar() {
+   for (let llave of tutores) {
+        
+   }
+
+}
+
+console.log(mostrar());

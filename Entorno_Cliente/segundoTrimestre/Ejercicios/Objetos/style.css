@@ -1,13 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(white-paper-texture.jpg);
+}
 .central{
     border: 1px solid black;
     width: 600px;
-    height: 600px;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
 
+.central img{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
 .central p{
-    /* display: ; */
     margin: 2rem;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-size: 2.6rem;
+    font-weight: bolder;
 }
