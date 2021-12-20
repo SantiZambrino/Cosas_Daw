@@ -1,0 +1,15 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.primeraParte{
+    border-radius: 100%;
+    background-color: red;
+    position: relative;
+    height: 400px;
+    width: 400px; 
+}
