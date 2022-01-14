@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-size: 62.5%;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    border: 1px;
+    background: rgb(12,51,89);
+    background: linear-gradient(90deg, rgba(12,51,89,1) 0%, rgba(3,49,140,1) 35%, rgba(33,130,191,1) 100%);
+}
+
+#logo{
+    width: 200px;
+    height: 150px;
+    align-self: flex-start;
+    position: relative;
+    top: 29px;
+    left: -227px;
+}
+
+#padre{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    border: 5px solid black;
+}
+img{
+    margin: 1%;
+}
+h1{
+    margin: 7%;
+    font-size: 2.4rem;
+    color: #FFFFFF;
+}
+p{
+    margin: 7%;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+}
+
+button{
+    width: 115px;
+    height: 50px;
+    background-color: #0c3359;
+    color: white;
+    padding: 14px 20px;
+    /* margin: 8px auto; */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    margin-left: 35%;
+}
+
+button:hover{
+    animation: heartBeat;
+    animation-duration: 10s;
+} 
+
+#consultaMedica{
+    border: 19px solid rgba(255, 255, 255, 0.5);
+    background-clip: padding-box;
+    width: 30%;
+    height: 700px;
+    z-index: 2;
+    position: absolute;
+    right: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(12,51,89);
+    border-radius: 5%;
+    display: none;
+}
+
+.llamada{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 50%;
+}
+#atender{
+    margin-left: -86%;
+}
+#colgar{
+    margin-left: 345%;
+}
+#doctor{
+    width: 500px;
+    height: 350px;
+    margin: 10%;
+    margin-bottom: 17%;
+}
+
+#atenderColgar{
+    display: flex;
+    flex-direction: row;
+   
+}

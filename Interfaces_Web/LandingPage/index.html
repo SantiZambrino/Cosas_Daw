@@ -1,17 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <section class="primeraParte">
-        <div></div>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="titulo">
+      <img src="img/pngwing.com.png" alt="" />
+    </nav>
+    <section class="section1">
+      <a href="#section2" class="bolaRoja"></a>
     </section>
-    <section></section>
-    <section></section>
-</body>
+    <section class="section2" id="section2">
+      <div class="viajes">
+        <img src="img/holiday-street-sign-osaka-shopping.jpg" alt="" />
+        <h2>Japón por libre</h2>
+        <p><img class="icono" src="img/date.png" alt="" /> 10 dias</p>
+        <ul>
+          <li>Tokio</li>
+          <li>Kyuto</li>
+          <li>Shirakawago</li>
+          <li>Takayama</li>
+        </ul>
+        <h3>Desde 1350€</h3>
+        <a href="#section3">
+          <input type="button" value="Pide Presupuesto" />
+        </a>
+      </div>
+      <div class="viajes">
+        <img
+          src="img/beautiful-shot-red-construction-water-with-human-silhouettes-looking-it.jpg"
+          alt=""
+        />
+        <h2>Japón Eterno</h2>
+        <p><img class="icono" src="img/date.png" alt="" /> 12 dias</p>
+        <ul>
+          <li>Hakone</li>
+          <li>Kyoto</li>
+          <li>Nara</li>
+          <li>Takayama</li>
+        </ul>
+        <h3>Desde 1550€</h3>
+        <a href="#section3">
+          <input type="button" value="Pide Presupuesto" />
+        </a>
+      </div>
+      <div class="viajes">
+        <img
+          src="img/aerial-view-tokyo-cityscape-with-fuji-mountain-japan.jpg"
+          alt=""
+        />
+        <h2>Japón Único</h2>
+        <p><img class="icono" src="img/date.png" alt="" /> 18 dias</p>
+        <ul>
+          <li>Tokio</li>
+          <li>Kyoto</li>
+          <li>Hakone</li>
+          <li>Nogoya</li>
+        </ul>
+        <h3>Desde 2050€</h3>
+        <a href="#section3">
+          <input type="button" value="Pide Presupuesto" />
+        </a>
+      </div>
+    </section>
+    <section class="section3" id="section3">
+      <form class="formulario">
+        <input type="text" id="fname" name="firstname" placeholder="Nombre" />
+        <input
+          type="text"
+          id="lname"
+          name="lastname"
+          placeholder="Primer Apellido"
+        />
+        <input
+          type="text"
+          id="lname"
+          name="lastname"
+          placeholder="Segundo Apellido"
+        />
+        <input type="text" id="email" name="email" placeholder="email" />
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Telefono Movil"
+        />
+        <select id="country" name="country">
+          <option value="australia">España</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+          <option value="usa">UK</option>
+          <option value="usa">Italia</option>
+          <option value="usa">Francia</option>
+        </select>
+        <select name="ciudad" id="ciudad">
+          <option value="Málaga">Málaga</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Valencia">Valencia</option>
+          <option value="Barcelona">Barcelona</option>
+        </select>
+        <textarea name="" id="" cols="40" rows="5">Mensaje</textarea>
+        <input type="submit" value="Enviar" />
+        <a href="#section2">Volver</a>
+      </form>
+    </section>
+  </body>
 </html>

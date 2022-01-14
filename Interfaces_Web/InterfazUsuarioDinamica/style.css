@@ -1,0 +1,31 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+} */
+
+.container{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    margin-left: 5px;
+    border: 1px solid black;
+    width: 90%;
+    height: 300px;
+    z-index: -1;
+}
+
+.divFinal{
+    border: 15px solid rgba(0, 0, 0, 0.5);
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    position: 20px;
+    left: 20%;
+    top: 50px;
+    /* float: center; */
+    z-index: 9;
+    background-color: blanchedalmond;
+    background-clip: padding-box;
+    display: none;
+}
