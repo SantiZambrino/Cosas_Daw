@@ -1,0 +1,31 @@
+//Tipo checkbox
+var cuadrado=doucment.getElementByTagName("input");
+
+console.log(cuadrado.checked); //Devuelve T o F
+cuadrado.defaultChecked; //Devuelve T o F
+cuadrado.click; //Marca o desmarca la casilla
+
+
+//Tipo radio
+var bloque=document.EquerySelcetorAll("input[type='radio']");
+var f=document.NOMBRE_DEL_FORMULARIO; 
+console.log(f.NOMBRE_DEL_TYPE.lenght);
+
+if(f.name[0].checked){
+    console.log("kakota");
+}
+
+f.santi[2].click() //Es como si el usuario hiciese click
+
+
+//Tipo select
+f.NAME_DEL_SELECT.options.lenght;
+f.NAME_DEL_SELECT.selectedIndex; //Devuelve la posicion de la opcion seleccionada.
+//En vez de checked es selected
+
+//El atributo onchange detecta cuando se cambia de opcion
+
+console.log(f.options[1].value); //Devuelve el value del segundo option
+console.log(f.options[1].text); //Devuelve el texto del segundo option
+
+f.ciudades.options[f.options.selectedIndex].text; //Devuelve el texto de la opcion seleccionada.
