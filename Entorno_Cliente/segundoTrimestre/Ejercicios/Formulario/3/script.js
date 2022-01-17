@@ -1,20 +1,24 @@
 window.onload = () =>{
-    const btn = document.querySelector("input[type='button']")
+    const form = document.forms[0];
+    const btn = form.btn;
 
-    btn.onclick = aficiones;
-}
-
-function aficiones() {
-    const casillas = document.getElementsByTagName("input[type='cheackbox]");
-    const label = document.getElementsByTagName('label');
-    const hoja = document.getElementsByTagName('textarea')[0];
-    let texto ='';
-
-    for (let i = 0; i < casillas.length; i++) {
-        if (casillas[i].checked) {
-            texto += label[i].value;
-        }
-    }
-
-    hoja.textContent = texto;
+    btn.onclick = ()=>{
+        const casillas = document.querySelectorAll("input[type='checkbox']");
+        const hoja = document.getElementsByTagName('textarea')[0];
+        let texto ='';
+    
+        // console.log(form.tenis.checked);
+        // for (let i = 0; i < casillas.length; i++) {
+        //    if (casillas[i].checked) {
+        //        console.log('hola')
+        //        texto += casillas[i].value;
+        //    }
+        // }
+        // console.log('hola')
+        casillas.forEach(item => {
+            if (item.checked) console.log('hola');
+        });
+    
+        form.hoja.value = texto;
+    };
 }
