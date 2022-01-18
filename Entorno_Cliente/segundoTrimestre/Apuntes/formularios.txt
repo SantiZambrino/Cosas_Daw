@@ -29,3 +29,6 @@ console.log(f.options[1].value); //Devuelve el value del segundo option
 console.log(f.options[1].text); //Devuelve el texto del segundo option
 
 f.ciudades.options[f.options.selectedIndex].text; //Devuelve el texto de la opcion seleccionada.
+
+//Validar formulario
+
