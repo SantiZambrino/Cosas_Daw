@@ -80,3 +80,28 @@ for(let num in alumno.asignatura){
 for(let num of alumno.asignaturas){
     c.log(num)
 }
+
+
+//Plantilla para recorrer objetos
+
+  //Recorro el objeto
+  for (const campoUsuario in usuario) {
+    //Compruebo si es objeto
+    if (typeof usuario[campoUsuario] === "object")
+       //Si lo es compruebo si es array 
+      if (Array.isArray(usuario[campoUsuario]))
+        //Si lo es lo muestro
+        console.log(`${campoUsuario}: ${usuario[campoUsuario]}`);
+      else {
+          //Si no es array recorro el objeto y lo muestro
+        for (let campoInterno in usuario[campoUsuario]) {
+          console.log(
+            `${campoInterno}: ${usuario[campoUsuario][campoInterno]}`
+          );
+        }
+      }
+      //Si no es objeto lo muestro
+    else{
+        console.log(`${campoUsuario}: ${usuario[campoUsuario]}`);
+    }  
+  }
