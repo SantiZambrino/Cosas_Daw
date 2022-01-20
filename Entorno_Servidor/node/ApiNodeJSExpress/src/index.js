@@ -27,7 +27,8 @@ con.connect(function(err) {
     console.log("Connected!");
     con.query("SELECT * FROM lista_usuario;", function (err, result) {
       if (err) throw err;
-      console.log("Result: " + JSON.stringify(result));
+    //   console.log("Result: " + JSON.stringify(result));
+    
     });
   });
 
@@ -61,7 +62,7 @@ app.get("/id_usuario", (req,res)=>{
 });
 
 //Lista de vehículos filtrando por ID de usuario
-app.get("/id_usuario", (req,res)=>{
+app.get("/listaVehiculos", (req,res)=>{
     const id_usuario = req.query.id;
     let sql = `SELECT * FROM lista_vehiculos where id_usuario = ${id_usuario}`;
     con.query(sql, (err,result)=>{
@@ -138,11 +139,62 @@ app.post("/borrarUsu", (req,res)=>{
 
 })
 //Modificar un vehiculo
+/*
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+*/
+app.post("/modificarVehiculo", (req,res)=>{
+    const id_matricula = req.body.id_matricula;
+    const marca = req.body.marca;
+    const matricula = req.body.matricula;
+    const modelo = req.body.modelo;
+    const year = req.body.year;
+
+    const sql = `update lista_vehiculos set marca = '${marca}', matricula = '${matricula}', modelo = '${modelo}', año = '${year}' where id_matricula = '${id_matricula}'`;
+    
+    con.query(sql, (err,result)=>{
+        if(err) throw err
+        res.send(result);
+    })
+    
+})
+
 //Crear un nuevo vehiculo
+app.post("/crearVehiculo",(req, res)=>{
+    const{matricula,marca,modelo,year,id_usuario} = req.body;
+    
+    const sql = ` insert into lista_vehiculos(matricula,marca,modelo,año,id_usuario) values('${matricula}','${marca}','${modelo}','${year}','${id_usuario}')`
+
+    con.query(sql, (err,result)=>{
+        if(err) throw err
+        res.send(result);
+    })
+})
+//Ver lista vehiculo
+app.get("/listaVehiculo",(req,res)=>{
+    const name = req.query.name;
+    const sql = "select * from lista_vehiculos"
+    con.query(sql, (err,result)=>{
+        if(err) throw err
+        res.send(result);
+    })
+})
 //Eliminar un nuevo vehiculo
+app.post("/borrarVehiculo", (req,res)=>{
+    const id_usu = req.body.id_usu;
+    const sql =`delete from lista_vehiculos where id_usuario = ${id_usu}`;
+    
+    con.query(sql, (err,result)=>{
+        if(err) throw err
+        res.send(result);
+    })
+
+})
 //Modificar un servicio
 //Crear un nuevo servicio
 //Eliminar un servicio
 //Informacion de un usuario y su lista de vehiculos en la misma llamada filtrando por id usuario
 //Informacion de un vehiculo y su lista de servicios en la misma llamada filtrando por id usuario
-
+//Conectar base de datos Juanfran http://10.192.240.25:8080/phpmyadmin
