@@ -47,6 +47,7 @@ app.get("/user", (req,res)=>{
     let sql = `SELECT * FROM lista_usuario`;
     con.query(sql, (err,result)=>{
         if(err) throw err
+        console.log({result})
         res.send(result);
     })
 });
@@ -54,9 +55,10 @@ app.get("/user", (req,res)=>{
 //Obtener los usurios filtrados
 app.get("/id_usuario", (req,res)=>{
     const id = req.query.id;
-    let sql = `SELECT * FROM lista_usuario where id_usuario = ${id}`;
+    let sql = `SELECT * FROM lista_usuario where id_usuario = '${id}'`;
     con.query(sql, (err,result)=>{
         if(err) throw err
+        console.log({result})
         res.send(result);
     })
 });
@@ -181,6 +183,15 @@ app.get("/listaVehiculo",(req,res)=>{
         res.send(result);
     })
 })
+//Ver lista servicios
+app.get("/listaServicios",(req,res)=>{
+    const name = req.query.name;
+    const sql = "select * from lista_servicios"
+    con.query(sql, (err,result)=>{
+        if(err) throw err
+        res.send(result);
+    })
+})
 //Eliminar un nuevo vehiculo
 app.post("/borrarVehiculo", (req,res)=>{
     const id_usu = req.body.id_usu;
@@ -190,11 +201,51 @@ app.post("/borrarVehiculo", (req,res)=>{
         if(err) throw err
         res.send(result);
     })
-
 })
 //Modificar un servicio
+app.post("/modificarServicios",(req,res)=>{
+
+    const{servicio,descripcion,id_servicio} = req.body;
+
+    const sql = `update lista_servicios set tipo_servicio = '${servicio}', descripcion  ='${descripcion}' where id_servicio = '${id_servicio}'`;
+
+    con.query(sql, (err,result)=>{
+        if(err) throw err
+        res.send(result);
+    })
+})
 //Crear un nuevo servicio
+app.post("/crearServicio",(req, res)=>{
+    const{tipo_servicio, descripcion,id_matricula} = req.body;
+    
+    const sql = ` insert into lista_servicios(tipo_servicio,descripcion,id_matricula) values('${tipo_servicio}','${descripcion}','${id_matricula}')`;
+
+    con.query(sql, (err,result)=>{
+        if(err) throw err
+        res.send(result);
+    })
+})
 //Eliminar un servicio
+app.post("/borrarServicio", (req,res)=>{
+    const id_servicio = req.body.id_servicio;
+    const sql =`delete from lista_servicios where id_servicio = ${id_servicio}`;
+    
+    con.query(sql, (err,result)=>{
+        if(err) throw err
+        res.send(result);
+    })
+})
 //Informacion de un usuario y su lista de vehiculos en la misma llamada filtrando por id usuario
+app.get("/infoUsuVehiculo"),(req,res)=>{
+    const id_usuario = req.query.id_usuario;
+
+    const sql= `select * from lista_usuario where id_usuario = '${id_usuario}'`;
+
+    con.query(sql, (err,result)=>{
+        if(err) throw err
+        console.log({result})
+        res.send(result);
+    })
+}
 //Informacion de un vehiculo y su lista de servicios en la misma llamada filtrando por id usuario
 //Conectar base de datos Juanfran http://10.192.240.25:8080/phpmyadmin
