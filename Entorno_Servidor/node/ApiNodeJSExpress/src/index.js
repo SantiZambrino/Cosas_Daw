@@ -236,16 +236,59 @@ app.post("/borrarServicio", (req,res)=>{
     })
 })
 //Informacion de un usuario y su lista de vehiculos en la misma llamada filtrando por id usuario
-app.get("/infoUsuVehiculo"),(req,res)=>{
-    const id_usuario = req.query.id_usuario;
+app.post("/infoUsuVehiculo", (req,res)=>{
+    const id_usuario = req.body.id_usuario;
 
     const sql= `select * from lista_usuario where id_usuario = '${id_usuario}'`;
+    const sqlVehiculo= `select * from lista_vehiculos where id_usuario = '${id_usuario}'`;
+ 
+    
+    con.query(sql, (err,result)=>{//Compruebo la primera consulta
+        if(err)
+        throw err
+        // res.send(result); No envio
+        //Crear otra query para vehiculos
+        con.query(sqlVehiculo, (err,resultVehiculo)=>{
+            if(err) throw err
+            // res.send(resultVehiculo); No envio 
+            const info = {//Cojo toda la informacion 
+                nombre:result[0].nombre,
+                apellidos:result[0].apellidos,
+                dni:result[0].dni,
+                telefono:result[0].telefono,
+                email:result[0].email,
+                vehiculos:resultVehiculo
+            }
+            res.send(info);//Muestro la información
+        })
+        // console.log({result});
+        // console.log({resultVehiculo});
+       
+    })
+})
+//Informacion de un vehiculo y su lista de servicios en la misma llamada filtrando por id usuario
+app.post("/infoVehiculoServicio", (req,res)=>{
+    const id_usuario = req.body.id_usuario;
 
+    const sql = `select * from lista_vehiculos where id_usuario = '${id_usuario}'`;
+    
+
+      
     con.query(sql, (err,result)=>{
         if(err) throw err
-        console.log({result})
-        res.send(result);
+        const sqlServicio = `select * from lista_servicios where id_matricula = '${result[0].id_matricula}'`;
+        con.query(sqlServicio, (err,resultServicio)=>{
+            if(err) throw err
+            console.log(result[0].id_matricula)
+            const objeto = {
+                matricula: result[1].matricula,
+                marca: result[1].marca,
+                modelo: result[1].modelo,
+                año: result[1].año,
+                servicios: resultServicio
+            }
+            res.send(objeto);
+        })
     })
-}
-//Informacion de un vehiculo y su lista de servicios en la misma llamada filtrando por id usuario
+})
 //Conectar base de datos Juanfran http://10.192.240.25:8080/phpmyadmin
