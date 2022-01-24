@@ -49,7 +49,7 @@ var Santi = {
 
 window.onload = function () {
     var papi = document.getElementsByClassName('central')[0];
-    for (let clave in Santi) {
+    for (let clave in Santi) {//Recorro el objeto Santi
         let nuevoP = document.createElement("p");
         if (clave == 'tutor') {
             nuevoP.textContent = `${clave}: ${Santi[clave].nombre}`; 

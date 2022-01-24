@@ -5,7 +5,6 @@ checkbox, se añadirá al contenido del textarea. Si se desmarca, hay que quitar
 
 window.onload = () =>{
     const form = document.forms[0];//Selecciono el formulario
-    const btn = form.btn;//Selecciono el boton para la primera opcion
     const casillas = document.querySelectorAll("input[type='checkbox']");//Selecciono los checkbox
 
     casillas.forEach(casilla =>{//Casilla son los checkbox
@@ -14,15 +13,4 @@ window.onload = () =>{
             else form.hoja.value = `${form.hoja.value.replace(casilla.name+" ", "")}`;// si no borro la opcion del checkarea al quitar el check 
         }
     })
-
-
-    // btn.onclick = ()=>{
-    //     const casillas = document.querySelectorAll("input[type='checkbox']");
-    //     const hoja = document.getElementsByTagName('textarea')[0];
-    //     form.hoja.value = '';
-        
-    //     casillas.forEach(item => {
-    //         if (item.checked) form.hoja.value += `${item.value} `;
-    //     });
-    // };
 }

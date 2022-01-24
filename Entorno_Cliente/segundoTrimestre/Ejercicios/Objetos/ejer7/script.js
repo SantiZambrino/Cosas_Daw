@@ -1,26 +1,3 @@
-// const usuario = {
-//     genero: true,
-//     datos ={
-//         name: "santi",
-//         lastname: "Zambrino",
-//         age: 33,
-//         Dni: "79158346Z"
-//     },
-
-//     adress ={
-//         street: "Calle Pepe Jose",
-//         number: 12,
-//         city:"Málaga",
-//         country: "Spain",
-//     },
-//     coordenates = {
-//         latitude: 2134241,
-//         longitude: 4435245,
-//     },
-//     login={
-//         id: "a1b2c3d4"
-//     }
-// }
 const usuario = {
   genre: "masculino",
   datos: {
@@ -92,13 +69,6 @@ window.onload = () => {
     }
     hojaUsuario.appendChild(nuevoP);
   }
-  // let softwareSkills = document.getElementById('softwareSkills');
-  // for(let skill of usuario.softwareSkills){
-  // let parrafo = document.createElement('p')
-  //     parrafo.className = 'box'
-  //     parrafo.textContent = skill
-  //     softwareSkills.appendChild(parrafo)
-  // }
 };
 
 window.onresize = () => {
