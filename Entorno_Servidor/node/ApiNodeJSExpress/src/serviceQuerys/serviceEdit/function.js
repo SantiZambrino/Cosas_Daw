@@ -8,7 +8,7 @@ function createService(res,req,con) {
         res.json({estado:'ok', descripcion:'REGISTROS INCERTADOS CORRECTAMENTE', id: result.insertId});
     })
 }
-
+exports.createService = createService;
 function deleteService(req,res,con) {
     const id_servicio = req.body.id_servicio;
     const sql =`delete from lista_servicios where id_servicio = ${id_servicio}`;
@@ -18,7 +18,7 @@ function deleteService(req,res,con) {
         res.json({estado: 'TODO BIEN', descripcion:'EL REGISTRO SE HA BORRADO'});
     })
 }
-
+exports.deleteService = deleteService;
 function modifyService(req,res,con) {
     const{servicio,descripcion,id_servicio} = req.body;
 
@@ -29,3 +29,4 @@ function modifyService(req,res,con) {
  	    res.json({estado: 'TODO BIEN', descripcion:'EL REGISTRO SE HA ACTUALIZADO'});
     })
 }
+exports.modifyService = modifyService;

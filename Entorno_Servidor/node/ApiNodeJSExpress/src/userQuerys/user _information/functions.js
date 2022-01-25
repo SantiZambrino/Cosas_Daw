@@ -8,6 +8,7 @@ function getAllUsers(req,res,con) {
         res.send(result);
     })
 }
+exports.getAllUsers = getAllUsers;
 
 function getUserById(req,res,con) {
     const id = req.query.id;
@@ -18,6 +19,7 @@ function getUserById(req,res,con) {
         res.send(result);
     })
 }
+exports.getUserById = getUserById;
 
 function getUserAndTheirVehicle(req,res,con) {
     const id_usuario = req.body.id_usuario;
@@ -49,3 +51,5 @@ function getUserAndTheirVehicle(req,res,con) {
        
     })
 }
+
+exports.getUserAndTheirVehicle = getUserAndTheirVehicle;

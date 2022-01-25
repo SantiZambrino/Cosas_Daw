@@ -6,7 +6,7 @@ function getVehiclesInfo(req, res, con) {
         res.send(result);
     })
 }
-
+exports.getVehiclesInfo = getVehiclesInfo;
 function getVehiclesByPlateId(req, res, con) {
     const id_matricula = req.query.id;
     let sql = `SELECT * FROM lista_vehiculos where id_matricula = ${id_matricula}`;
@@ -15,7 +15,7 @@ function getVehiclesByPlateId(req, res, con) {
         res.send(result);
     })
 }
-
+exports.getVehiclesByPlateId = getVehiclesByPlateId;
 function getVehicles(req, res, con) {
     const name = req.query.name;
     const sql = "select * from lista_vehiculos"
@@ -24,7 +24,7 @@ function getVehicles(req, res, con) {
         res.send(result);
     })
 }
-
+exports.getVehicles = getVehicles;
 function getVehicleAndService(req,res,con) {
     const id_usuario = req.body.id_usuario;
 
@@ -49,3 +49,4 @@ function getVehicleAndService(req,res,con) {
         })
     })
 }
+exports.getVehicleAndService = getVehicleAndService;
