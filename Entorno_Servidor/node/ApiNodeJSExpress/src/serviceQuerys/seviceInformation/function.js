@@ -6,7 +6,7 @@ function getServiceByVehicleId(req,res,con) {
         res.send(result);
     })
 }
-
+exports.getServiceByVehicleId = getServiceByVehicleId;
 function getServices(req,res,con) {
     const name = req.query.name;
     const sql = "select * from lista_servicios"
@@ -15,3 +15,4 @@ function getServices(req,res,con) {
         res.send(result);
     })
 }
+exports.getServices = getServices;

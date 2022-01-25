@@ -12,7 +12,7 @@ function modifyVehicle(req,res,con) {
         res.json({estado: 'TODO BIEN', descripcion:'EL REGISTRO SE HA ACTUALIZADO'});
     })
 }
-
+exports.modifyVehicle = modifyVehicle;
 function createVehicle(req,res,con) {
     const{matricula,marca,modelo,year,id_usuario} = req.body;
     
@@ -23,8 +23,7 @@ function createVehicle(req,res,con) {
         res.json({estado:'ok', descripcion:'REGISTROS INCERTADOS CORRECTAMENTE', id: result.insertId});
     })
 }
-
-
+exports.createVehicle = createVehicle;
 function deleteVehicle(req,res,con) {
     const id_usu = req.body.id_usu;
     const sql =`delete from lista_vehiculos where id_usuario = ${id_usu}`;
@@ -34,3 +33,4 @@ function deleteVehicle(req,res,con) {
         res.json({estado: 'TODO BIEN', descripcion:'EL REGISTRO SE HA BORRADO'});
     })
 }
+exports.deleteVehicle = deleteVehicle;
