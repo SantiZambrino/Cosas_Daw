@@ -22,8 +22,8 @@ function anagrama(f) {
   //Creo array para comprobar
   let arraycheck = [];
 
-  console.log(palabra1);
-  console.log(palabra2);
+  // console.log(palabra1);
+  // console.log(palabra2);
 
   // //Recorro la primera palabra
   // for (const letra of palabra1) {

@@ -5,7 +5,7 @@ window.onload = ()=>{
         e.preventDefault//Evitar que el submit envie por defecto
         validar();
     };
-
+    
 }
 
 function validar() {

@@ -9,8 +9,17 @@ const carEdit = require('./carQuerys/car_modification/function');
 const serviceInfo = require('./serviceQuerys/seviceInformation/function');
 const serviceEdit= require('./serviceQuerys/serviceEdit/function');
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true }));
 // app.use(express.urlencoded({ extended: false }));
+const bodyParser = require('body-parser');
+const cors = require('../node_modules/cors');
+
+// const app = express();
+app.use(express.urlencoded({ extended: false }));
+// app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
 //Configuraciones
 app.set('port', process.env.PORT || 3000);
