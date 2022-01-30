@@ -9,9 +9,8 @@ window.onload = ()=>{
 
     takeTheBody.addEventListener('mousemove',(event)=>{
         let x = event.offsetX;
-        let  y= event.offsetY;
-        // console.log({x})
-        // console.log({y})
+        let  y= event.offsetY; 
+      
         elementoP.textContent = `eje X: ${x}`
         elementoP2.textContent = `eje X: ${y}`
     })
@@ -20,7 +19,7 @@ window.onload = ()=>{
         // event.defaultPrevented
         let btn = event.button//tiene mas soporte de navegadores    
         console.log({btn})
-        textoAbajo()
+        textoAbajo(btn,divAbajo)
     })
     //Este Listener con el evento contexmenu y el prevent default quitan el menu del raton derecho
     divAbajo.addEventListener('contextmenu',(event)=>{
@@ -37,7 +36,23 @@ function crear(divTexto,elementoP,elementoP2) {
     divTexto.appendChild(elementoP2)
 }
 
-function textoAbajo() {
+function textoAbajo(btn,divAbajo) {
     //Mirar si hay un first child. SI lo hay borrarlo
+    if(divAbajo.firstChild) divAbajo.removeChild(divAbajo.firstChild);
     //Crear uno nuevo y mostrar el mensaje
+    let texto = ""
+    let elemento = document.createElement('p');
+    switch (btn) {
+        case 0:
+            texto = document.createTextNode('botón izquierdo')
+            break;
+        case 1:
+            texto = document.createTextNode('botón del medio')
+            break;
+        case 2:
+            texto = document.createTextNode('botón derecho')
+            break;    
+    }
+    elemento.appendChild(texto);
+    divAbajo.appendChild(elemento);
 }  
