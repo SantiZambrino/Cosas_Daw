@@ -1,6 +1,4 @@
-export * from 'creacionObjetos.js'
-
-function mostrarObjeto(data) {
+export function mostrarObjeto(data) {
     const div = document.getElementById('contenido')
     for (const campos of data) {
         for (const contenido in campos) {

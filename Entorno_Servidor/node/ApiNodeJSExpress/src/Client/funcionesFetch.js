@@ -1,5 +1,5 @@
-export * from 'funcionesFetch.js'
-import '/Client/mostrarObjeto.js'
+import { mostrarObjeto } from './crecionObjetos';
+import '/Client/creacionObjetos.js'
 
 function mostrarDatosUsu(f) {
     const textUsuario = f.textIdUsuario.value;
@@ -19,3 +19,5 @@ function mostrarDatosUsu(f) {
         .then(response => response.json())
         .then(data => mostrarObjeto(data));
 }
+
+exports.mostrarDatosUsu = mostrarDatosUsu;

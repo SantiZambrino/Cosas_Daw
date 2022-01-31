@@ -1,6 +1,4 @@
-export * from 'btnFunciones.js'
-
-function formUsuarios(f, botones) {
+export function formUsuarios(f, botones) {
     //Creo Input text
     let nuevoInputText = document.createElement("input")
     nuevoInputText.setAttribute("type", "text")

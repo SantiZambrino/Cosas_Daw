@@ -1,5 +1,6 @@
 import '/Client/btnFunciones.js';
 import '/Client/funcionesFetch.js'
+const usuario = require('/Client/funcionesFetch.js')
 
 window.onload = () => {
     const f = document.forms[0];
@@ -13,7 +14,7 @@ window.onload = () => {
                     formUsuarios(f, botones)
                     //Capturo el boton enviar y el text 
                     const btnEnviar = f.enviar;
-                    btnEnviar.addEventListener('click', (e) => {e.stopPropagation(), mostrarDatosUsu(f)})
+                    btnEnviar.addEventListener('click', (e) => {e.stopPropagation(), usuario.mostrarDatosUsu(f)})
                     break;
                 case 'Vehiculos':
                     formVehiculos(f)
