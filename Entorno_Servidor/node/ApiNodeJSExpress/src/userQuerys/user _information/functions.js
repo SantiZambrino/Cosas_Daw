@@ -12,6 +12,7 @@ exports.getAllUsers = getAllUsers;
 
 function getUserById(req,res,con) {
     const id = req.query.id;
+    console.log({id})
     let sql = `SELECT * FROM lista_usuario where id_usuario = '${id}'`;
     con.query(sql, (err,result)=>{
         if(err) throw err
