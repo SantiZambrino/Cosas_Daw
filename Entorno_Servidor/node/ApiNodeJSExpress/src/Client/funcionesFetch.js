@@ -1,5 +1,5 @@
-import { mostrarObjeto } from './crecionObjetos';
-import '/Client/creacionObjetos.js'
+import {mostrarObjeto} from './crecionObjetos.js'
+export {mostrarDatosUsu}
 
 function mostrarDatosUsu(f) {
     const textUsuario = f.textIdUsuario.value;
@@ -17,7 +17,7 @@ function mostrarDatosUsu(f) {
         }
     })
         .then(response => response.json())
-        .then(data => mostrarObjeto(data));
+        .then(data => mostrarObjeto(data))
+        .catch(err => console.error({err}));
 }
 
-exports.mostrarDatosUsu = mostrarDatosUsu;

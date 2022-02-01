@@ -1,4 +1,6 @@
-export function mostrarObjeto(data) {
+export{mostrarObjeto}
+
+function mostrarObjeto(data) {
     const div = document.getElementById('contenido')
     for (const campos of data) {
         for (const contenido in campos) {
@@ -18,3 +20,4 @@ function crearDato(texto,div) {
     elementoP.appendChild(nodoTexto)
     div.appendChild(elementoP)
 }
+

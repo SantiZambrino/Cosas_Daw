@@ -1,4 +1,8 @@
-export function formUsuarios(f, botones) {
+export{formUsuarios};
+
+function formUsuarios(f, botones) {
+    //Creo div
+    const nuevoDiv = document.createElement('div')
     //Creo Input text
     let nuevoInputText = document.createElement("input")
     nuevoInputText.setAttribute("type", "text")
@@ -9,9 +13,11 @@ export function formUsuarios(f, botones) {
     nuevoInputBtn.setAttribute("name", "enviar")
     nuevoInputBtn.value = 'Enviar'
 
-    f.appendChild(nuevoInputText)
-    f.appendChild(nuevoInputBtn)
 
+    nuevoDiv.appendChild(nuevoInputText)
+    nuevoDiv.appendChild(nuevoInputBtn)
+    f.appendChild(nuevoDiv)
+ 
 }
 
 function formVehiculos(f) {
@@ -21,4 +27,5 @@ function formVehiculos(f) {
 function formServicios(f) {
 
 }
+
 
