@@ -1,4 +1,4 @@
-import '/Client/btnFunciones.js';
+import 'btnFunciones.js';
 import '/Client/funcionesFetch.js'
 const usuario = require('/Client/funcionesFetch.js')
 
