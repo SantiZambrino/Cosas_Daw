@@ -1,5 +1,5 @@
 import { formUsuarios } from './btnFunciones.js';
-import {mostrarDatosUsu} from './funcionesFetch.js'
+import {mostrarDatosUsu, mostrarDatosUsuyCar} from './funcionesFetch.js'
 
 window.onload = () => {
     const f = document.forms[0];
@@ -14,6 +14,7 @@ window.onload = () => {
                     //Capturo el boton enviar y el text 
                     const btnEnviar = f.enviar;
                     btnEnviar.addEventListener('click', (e) => {e.stopPropagation(), mostrarDatosUsu(f)})
+                    f.enviarCar.addEventListener('click', (e) => {e.stopPropagation(), mostrarDatosUsuyCar(f)})
                     break;
                 case 'Vehiculos':
                     formVehiculos(f)
