@@ -18,10 +18,14 @@ section{
     background-color: aqua;
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
+
     justify-content: center;
     align-items: flex-start;
-    /* margin: 0 auto; */
     padding-left: calc(150px / 2);
+}
+
+.divDinamico{
+    border: 1px solid black;
+    margin: 4% auto;
 }
 

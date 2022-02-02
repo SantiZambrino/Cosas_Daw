@@ -3,6 +3,7 @@ export{formUsuarios};
 function formUsuarios(f, botones) {
     //Creo div
     const nuevoDiv = document.createElement('div')
+    nuevoDiv.className = 'divDinamico';
     //Creo Input text
     let nuevoInputText = document.createElement("input")
     nuevoInputText.setAttribute("type", "text")
