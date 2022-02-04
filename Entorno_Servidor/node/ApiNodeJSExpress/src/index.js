@@ -28,7 +28,7 @@ app.set('json spaces', 2);
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-    host: "10.192.240.25",
+    host: "10.192.240.26",
     port: "3307",
     user: "cuentaSanti",
     password: "1234",

@@ -16,7 +16,9 @@ function formUsuarios(f, botones) {
     nuevoInputText.setAttribute("type", "text")
     nuevoInputText.setAttribute("name", "textIdUsuario")
     nuevoInputText.setAttribute("placeholder", "Introduce tu ID")
+    //Creo el text de la info para vehiculo
     let inputTextoVehiculo = nuevoInputText.cloneNode()
+    inputTextoVehiculo.setAttribute('name', 'idUsuarioVehiculo')
     //Creo input  enviar
     let nuevoInputBtn = botones.cloneNode()//Clona un botón con un evento
     nuevoInputBtn.setAttribute("name", "enviar")

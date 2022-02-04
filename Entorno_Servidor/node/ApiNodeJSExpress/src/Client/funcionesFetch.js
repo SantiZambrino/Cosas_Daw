@@ -5,6 +5,7 @@ function mostrarDatosUsu(f) {
     const textUsuario = f.textIdUsuario.value;
     console.log({ textUsuario })
     const id = textUsuario;
+    console.log({id})
     const url = `http://localhost:3000/id_usuario?id=${id}`
     console.log('estas dentro')
 
@@ -23,10 +24,10 @@ function mostrarDatosUsu(f) {
 
 function mostrarDatosUsuyCar(f) {
     console.log('te voy a mostar el usuario y sus coches')
-    const textUsuario = f.textIdUsuario.value;
+    const textUsuario = f.idUsuarioVehiculo.value;
     console.log({ textUsuario })
     const id = textUsuario;
-    const url = `http://localhost:3000/infoVehiculo?id=${id}`
+    const url = `http://localhost:3000/infoUsuVehiculo?id_usuario=${id}`
     console.log('estas dentro')
 
     fetch(url, {
@@ -35,9 +36,12 @@ function mostrarDatosUsuyCar(f) {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({
+            id_usuario: id
+        })
     })
         .then(response => response.json())
-        .then(data => mostrarObjeto(data))
+        .then(data => console.log({data}))
         .catch(err => console.error({err}));
 }
