@@ -1,4 +1,4 @@
-export{mostrarObjeto}
+export{mostrarObjeto, mostrarObjetoVehiculo}
 
 function mostrarObjeto(data) {
     const div = document.getElementById('contenido')
@@ -21,3 +21,33 @@ function crearDato(texto,div) {
     div.appendChild(elementoP)
 }
 
+
+function mostrarObjetoVehiculo(data){
+    let texto ="";
+    console.log({data})
+    const div = document.getElementById('contenido')
+    // for (const contenido in data) {
+    //     if (Array.isArray(data[contenido])) {
+    //         console.log('soy un puto array')
+    //     }else crearDato(`${contenido}: ${data[contenido]}`, div)
+        
+    // }
+    Object.entries(data).forEach(([key, value]) =>{
+        if (Array.isArray(value)){
+            console.log(value)
+            for (const contenidoArray of value) {
+                console.log(contenidoArray.marca)
+                Object.entries(contenidoArray).forEach(([key, value]) =>{
+                    if (key === 'marca') {
+                        texto +=  value;
+                        // crearDato((value), div)                
+                    }
+                    crearDato((`marca: ${texto}`), div) 
+                    console.log(`${key}: ${value}`)
+                })
+            }
+        }else{
+            crearDato((key, value), div)
+        }  
+    });
+}

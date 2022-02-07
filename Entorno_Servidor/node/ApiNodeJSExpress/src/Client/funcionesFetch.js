@@ -1,4 +1,4 @@
-import {mostrarObjeto} from './crecionObjetos.js'
+import {mostrarObjeto, mostrarObjetoVehiculo} from './crecionObjetos.js'
 export {mostrarDatosUsu, mostrarDatosUsuyCar}
 
 function mostrarDatosUsu(f) {
@@ -37,11 +37,12 @@ function mostrarDatosUsuyCar(f) {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
+        //Por post las cosas se pasan por el body
         body: JSON.stringify({
             id_usuario: id
         })
     })
         .then(response => response.json())
-        .then(data => console.log({data}))
+        .then(data => mostrarObjetoVehiculo(data))
         .catch(err => console.error({err}));
 }
