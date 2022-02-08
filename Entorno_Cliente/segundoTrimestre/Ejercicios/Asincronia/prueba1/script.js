@@ -17,7 +17,7 @@ window.onload = () => {
       let respuesta = JSON.parse(datos.target.response);
 
       //document.querySelector("input[type='button']").disabled = false;
-
+      console.log(respuesta)
       mostrarObjeto(respuesta[Math.floor(Math.random() * 10)]);
     });
 
@@ -26,7 +26,7 @@ window.onload = () => {
     aquiVaElObjeto.send();
   };
 };
-
+ 
 function mostrarObjeto(res) {
   for (const key in res) {
     //Miro si es objeto
@@ -46,7 +46,6 @@ function mostrarObjeto(res) {
         }
     }
     else if (key != "id") pintarObjeto(`${key}: ${res[key]}`);
- 
   }
 }
 

@@ -1,20 +1,20 @@
-export{mostrarObjeto, mostrarObjetoVehiculo}
+export { mostrarObjeto, mostrarObjetoVehiculo }
 
 function mostrarObjeto(data) {
     const div = document.getElementById('contenido')
     for (const campos of data) {
         for (const contenido in campos) {
             console.log(contenido + " contiene " + campos[contenido])
-            if (contenido!='contrasena'&& contenido !='id_usuario'&& contenido !='id_admin') {
+            if (contenido != 'contrasena' && contenido != 'id_usuario' && contenido != 'id_admin') {
                 let texto = `${contenido}: ${campos[contenido]}`;
-                crearDato(texto,div)
+                crearDato(texto, div)
             }
         }
     }
 }
 
 
-function crearDato(texto,div) {
+function crearDato(texto, div) {
     const elementoP = document.createElement('p')
     const nodoTexto = document.createTextNode(texto);
     elementoP.appendChild(nodoTexto)
@@ -22,32 +22,45 @@ function crearDato(texto,div) {
 }
 
 
-function mostrarObjetoVehiculo(data){
-    let texto ="";
-    console.log({data})
+function mostrarObjetoVehiculo(data) {
+    let texto = "";
+    // console.log({ data })
     const div = document.getElementById('contenido')
     // for (const contenido in data) {
     //     if (Array.isArray(data[contenido])) {
     //         console.log('soy un puto array')
     //     }else crearDato(`${contenido}: ${data[contenido]}`, div)
-        
+
     // }
-    Object.entries(data).forEach(([key, value]) =>{
-        if (Array.isArray(value)){
-            console.log(value)
-            for (const contenidoArray of value) {
-                console.log(contenidoArray.marca)
-                Object.entries(contenidoArray).forEach(([key, value]) =>{
-                    if (key === 'marca') {
-                        texto +=  value;
-                        // crearDato((value), div)                
-                    }
-                    crearDato((`marca: ${texto}`), div) 
-                    console.log(`${key}: ${value}`)
-                })
+
+    // Mostrar objeto con Object.entries
+    // Object.entries(data).forEach(([key, value]) => {
+    //     if (Array.isArray(value)) {
+    //         console.log(value)
+    //         for (const contenidoArray of value) {
+    //             console.log(contenidoArray.marca)
+    //             Object.entries(contenidoArray).forEach(([key, value]) => {
+    //                 if (key === 'marca') {
+    //                     texto += " " + value;
+    //                     // crearDato((value), div)                
+    //                 }
+    //                 console.log(`${key}: ${value}`)
+    //             })
+    //         }
+    //         crearDato((`marca: ${texto}`), div)
+    //     } else {
+    //         crearDato((key, value), div)
+    //     }
+    // });
+    console.log({ data })
+    const datos = Object.entries(data);
+    for (const contenido of datos) {
+        if (contenido[0] != 'vehiculos') crearDato(contenido, div)
+        for (const valor of contenido) {
+            if (Array.isArray(valor)) {
+                for (const contenido of valor) {texto += " " + contenido.marca;}
             }
-        }else{
-            crearDato((key, value), div)
-        }  
-    });
+        }
+    }
+    crearDato((`marca: ${texto}`), div)
 }
