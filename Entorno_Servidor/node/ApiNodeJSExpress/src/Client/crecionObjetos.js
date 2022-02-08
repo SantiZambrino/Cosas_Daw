@@ -53,14 +53,14 @@ function mostrarObjetoVehiculo(data) {
     //     }
     // });
     console.log({ data })
-    const datos = Object.entries(data);
-    for (const contenido of datos) {
-        if (contenido[0] != 'vehiculos') crearDato(contenido, div)
-        for (const valor of contenido) {
-            if (Array.isArray(valor)) {
-                for (const contenido of valor) {texto += " " + contenido.marca;}
+    const datos = Object.entries(data);//Meto los objetos en entries
+    for (const contenido of datos) {//Lo recorro con el for of
+        if (contenido[0] != 'vehiculos') crearDato(contenido, div)//Si es diferente a vehiculos lo muestro
+        for (const valor of contenido) {//Recorro contenido
+            if (Array.isArray(valor)) {//Miro si hay algun array
+                for (const contenido of valor) {texto += " " + contenido.marca;}//recorro el array y busco el contenido de marca
             }
         }
     }
-    crearDato((`marca: ${texto}`), div)
+    crearDato((`marca: ${texto}`), div)//Muestro la marca
 }
