@@ -53,6 +53,8 @@ function mostrarObjetoVehiculo(data) {
     //     }
     // });
     console.log({ data })
+    const datosPrueba = Object.getOwnPropertyNames(data)
+    console.log({datosPrueba})
     const datos = Object.entries(data);//Meto los objetos en entries
     for (const contenido of datos) {//Lo recorro con el for of
         if (contenido[0] != 'vehiculos') crearDato(contenido, div)//Si es diferente a vehiculos lo muestro
