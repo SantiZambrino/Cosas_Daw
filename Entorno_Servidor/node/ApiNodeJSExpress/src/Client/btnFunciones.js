@@ -5,13 +5,26 @@ function formUsuarios(f, botones) {
     const nuevoDiv = document.createElement('div')
     nuevoDiv.className = 'divDinamico';
     //Crear span
-    const span = document.createElement('span')
-    const nodoTexto = document.createTextNode('Obtener Usuario')
-    span.appendChild(nodoTexto) 
-    const spanVehiculos = document.createElement('span')
-    const nodoTextoVehiculo = document.createTextNode('Obtener Usuario y Vehiculo')
-    spanVehiculos.appendChild(nodoTextoVehiculo) 
+    const spanes = []
+    const nodos =['Obetener usuarios', 'Obtener usuario y Vehiculos', 'Editar Usuarios', 'Insertar Usuario', 'Borrar Usuario']
+    for (let i = 0; i < 5; i++) {
+         spanes[i] = document.createElement('span')
+         spanes[i].appendChild(document.createTextNode(nodos[i]))
+         nuevoDiv.appendChild(spanes[i])
+    }
+    // const span = document.createElement('span')
+    // const nodoTexto = document.createTextNode('Obtener Usuario')
+    // span.appendChild(nodoTexto) 
+    // const spanVehiculos = document.createElement('span')
+    // const nodoTextoVehiculo = document.createTextNode('Obtener Usuario y Vehiculo')
+    // spanVehiculos.appendChild(nodoTextoVehiculo) 
     //Creo Input text
+    // const inputsText = []
+    // const names = ['textIdUsuario', 'idUsuarioVehiculo','idUsuarioVehiculo','idUsuarioVehiculo','idUsuarioVehiculo']
+    // for (let i = 0; i < 5; i++) {
+    //     inputsText[i] = document.createElement( 'input[type="text"],[name = "$"]')
+        
+    // }
     let nuevoInputText = document.createElement("input")
     nuevoInputText.setAttribute("type", "text")
     nuevoInputText.setAttribute("name", "textIdUsuario")
@@ -29,18 +42,18 @@ function formUsuarios(f, botones) {
     nuevoInputBtnVehiculo.setAttribute("name", "enviarCar")
     nuevoInputBtnVehiculo.value = 'Enviar'
 
-    nuevoDiv.appendChild(span)
-    nuevoDiv.appendChild(nuevoInputText)
-    nuevoDiv.appendChild(nuevoInputBtn)
-    nuevoDiv.appendChild(spanVehiculos)
-    nuevoDiv.appendChild(inputTextoVehiculo)
-    nuevoDiv.appendChild(nuevoInputBtnVehiculo)
+    // nuevoDiv.appendChild(span)
+    nuevoDiv.insertBefore(nuevoInputText, spanes[1])
+    // nuevoDiv.appendChild(nuevoInputBtn)
+    // nuevoDiv.appendChild(spanVehiculos)
+    // nuevoDiv.appendChild(inputTextoVehiculo)
+    // nuevoDiv.appendChild(nuevoInputBtnVehiculo)
     f.appendChild(nuevoDiv)
  
 }
 
 function formVehiculos(f) {
-
+   
 }
 
 function formServicios(f) {

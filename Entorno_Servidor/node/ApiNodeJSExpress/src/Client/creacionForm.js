@@ -18,6 +18,7 @@ window.onload = () => {
                     break;
                 case 'Vehiculos':
                     formVehiculos(f)
+                    
                     break;
                 case 'Servicios':
                     formServicios(f)

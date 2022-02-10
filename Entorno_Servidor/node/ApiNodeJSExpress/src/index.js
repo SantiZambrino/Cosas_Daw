@@ -2,6 +2,24 @@ const { application } = require('express');
 const express = require('express');
 const app = express();
 const morgan=require('morgan');
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./doc/swagger_output.json')
+// Extend: https://swagger.io/specification/
+// const swaggerOptions = {
+//     swaggerDefinition: {
+//         info:{
+//             title: 'mi Api',
+//             description: 'Api de prueba',
+//             contact: {
+//                 name: 'Probando mi apir'
+//             },
+//             server: ("http://localhost:8080")
+//         }
+//     },
+//     apis:['src/index.js'] 
+// } 
+
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 const userInfo = require("./userQuerys/user _information/functions")
 const userEdit = require('./userQuerys/user_modificationAndCreation/function');
 const carInfo = require('./carQuerys/car_information/function');
