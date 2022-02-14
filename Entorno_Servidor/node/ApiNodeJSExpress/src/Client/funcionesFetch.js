@@ -1,5 +1,5 @@
-import {mostrarObjeto, mostrarObjetoVehiculo} from './crecionObjetos.js'
-export {mostrarDatosUsu, mostrarDatosUsuyCar}
+import {mostrarObjeto, mostrarObjetoVehiculo, editconfirmation} from './crecionObjetos.js'
+export {mostrarDatosUsu, mostrarDatosUsuyCar, editarUsuario}
 
 function mostrarDatosUsu(f) {
     const textUsuario = f.textIdUsuario.value;
@@ -27,7 +27,7 @@ function mostrarDatosUsuyCar(f) {
     const textUsuario = f.idUsuarioVehiculo.value;
     console.log({ textUsuario })
     const id = textUsuario;
-    const url = `http://localhost:3000/infoUsuVehiculo?id_usuario=${id}`
+    const url = `http://localhost:3000/infoUsuVehiculo`
     console.log('estas dentro')
 
     fetch(url, {
@@ -45,4 +45,31 @@ function mostrarDatosUsuyCar(f) {
         .then(response => response.json())
         .then(data => mostrarObjetoVehiculo(data))
         .catch(err => console.error({err}));
+}
+
+function editarUsuario(f) {
+    console.log('editando')
+    const userDni = f.editdni.value
+    const username = f.editname.value
+    const userApellido = f.editapellido.value
+    const id = f.editid.value
+    const url = `http://localhost:3000/editUsuario`
+
+    fetch(url, {
+        method: 'Post',
+        mode: 'cors',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            dni: userDni,
+            nombre: username,
+            apellidos: userApellido,
+            id_usu: id
+        })
+    })
+    .then(response => response.json())
+    .then(editconfirmation())
+    .catch(err => console.error({err}));
 }

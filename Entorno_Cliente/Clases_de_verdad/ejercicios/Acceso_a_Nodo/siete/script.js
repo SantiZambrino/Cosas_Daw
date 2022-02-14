@@ -22,18 +22,6 @@ window.onload = () => {
                         this.style.backgroundColor = colores[0];    
                         break;
                 }
-                // if (this.style.backgroundColor == 'white' || this.style.backgroundColor =="") {
-                //     this.style.backgroundColor = colores[0];
-                // }  
-                // else if(this.style.backgroundColor == colores[0]){
-                //     this.style.backgroundColor = colores[1];
-                // }else if(this.style.backgroundColor == colores[1]){
-                //     this.style.backgroundColor = colores[2];
-                // }else if(this.style.backgroundColor == colores[2]){
-                //     this.style.backgroundColor = colores[3];
-                // }else{
-                //     this.style.backgroundColor = 'white';
-                // }
             }    
     }
 

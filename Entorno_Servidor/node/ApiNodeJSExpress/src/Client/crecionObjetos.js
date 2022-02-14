@@ -1,4 +1,4 @@
-export { mostrarObjeto, mostrarObjetoVehiculo }
+export { mostrarObjeto, mostrarObjetoVehiculo, editconfirmation }
 
 function mostrarObjeto(data) {
     const div = document.getElementById('contenido')
@@ -19,6 +19,11 @@ function crearDato(texto, div) {
     const nodoTexto = document.createTextNode(texto);
     elementoP.appendChild(nodoTexto)
     div.appendChild(elementoP)
+}
+
+function editconfirmation() {
+    const div = document.getElementById('contenido')
+    crearDato('Campo editado', div)
 }
 
 

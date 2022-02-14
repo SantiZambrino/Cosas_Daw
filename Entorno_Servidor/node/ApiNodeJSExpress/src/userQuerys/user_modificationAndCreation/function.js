@@ -20,21 +20,25 @@ function editUser(req,res,con) {
     const dni = req.body.dni
     const name = req.body.nombre;
     const apellido = req.body.apellidos;
-    
-    const sql = `update from lista_usuarios set nombre = ${name}, apellidos = ${apellido}, dni = ${dni};` 
+    const id_usu = req.body.id_usu;
+    console.log('estoy aqui')
+    const sql = `update lista_usuario set nombre = '${name}', apellidos = '${apellido}', dni = '${dni}' where id_usuario = ${id_usu}` 
     con.query(sql, (err)=>{
-        if(err) throw res.json({estado: 'FATAL ERROR', descripcion:"CAMPO MODIFICADO INCORRECTAMENTE"})
+        if(err) {
+            console.log(err);
+            res.json({estado: 'FATAL ERROR', descripcion:"CAMPO MODIFICADO INCORRECTAMENTE"});
+        }    
         res.json({estado: 'TODO BIEN', descripcion:'EL REGISTRO SE HA ACTUALIZADO'});
     })
 }
-exports.editUser = createUser;
+exports.editUser = editUser;
 function deleteUser(req,res,con) {
     const id_usu = req.body.id_usu;
     const sql =`delete from lista_usuario where id_usuario = ${id_usu}`;
     console.log(sql);
     con.query(sql, (err,result)=>{
         if(err) throw res.json({estado: 'FATAL ERROR', descripcion:"NO SE HA BORRADO NADA"})
-        res.json({estado: 'TODO BIEN', descripcion:'EL REGISTRO SE HA BORRADO'});
+        res.json(result, {estado: 'TODO BIEN', descripcion:'EL REGISTRO SE HA BORRADO'});
     })
 }
 exports.deleteUser = deleteUser;
