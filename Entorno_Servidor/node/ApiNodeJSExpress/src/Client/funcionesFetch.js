@@ -1,5 +1,5 @@
-import {mostrarObjeto, mostrarObjetoVehiculo, editconfirmation} from './crecionObjetos.js'
-export {mostrarDatosUsu, mostrarDatosUsuyCar, editarUsuario}
+import {mostrarObjeto, mostrarObjetoVehiculo, editconfirmation, insertConfirmation ,deleteConfirmation} from './crecionObjetos.js'
+export {mostrarDatosUsu, mostrarDatosUsuyCar, editarUsuario, insertarUsuario, borrarUsuario}
 
 function mostrarDatosUsu(f) {
     const textUsuario = f.textIdUsuario.value;
@@ -71,5 +71,58 @@ function editarUsuario(f) {
     })
     .then(response => response.json())
     .then(editconfirmation())
+    .catch(err => console.error({err}));
+}
+
+function insertarUsuario(f) {
+    const username = f.nombre.value
+    const userApellido = f.apellidos.value
+    const userDni = f.dni.value
+    const userTelefono = f.telefono.value
+    const userEmail = f.email.value
+    const userPass = f.pass.value
+    const userAdmin = f.id_admin.value
+    const url = `http://localhost:3000/insertUsu`
+
+    fetch(url, {
+        method: 'Post',
+        mode: 'cors',
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: username,
+            apellido: userApellido,
+            dni: userDni,
+            telefono: userTelefono,
+            email: userEmail,
+            pass: userPass,
+            id_admin: userAdmin
+        })
+    })
+    .then(response => response.json())
+    .then(insertConfirmation())
+    .catch(err => console.error({err}));
+
+}
+
+function borrarUsuario(f) {
+    const id = f.campoBorrar.value
+    const url = `http://localhost:3000/borrarUsu`
+
+    fetch(url, {
+        method: 'Post',
+        mode: 'cors',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id_usu: id
+        })
+    })
+    .then(response => response.json())
+    .then(deleteConfirmation())
     .catch(err => console.error({err}));
 }

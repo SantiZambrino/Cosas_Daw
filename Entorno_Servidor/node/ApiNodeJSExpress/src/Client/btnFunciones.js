@@ -74,7 +74,7 @@ function formUsuarios(f, botones) {
     }
     const btnInsertar = botones.cloneNode()
     btnInsertar.className = "";
-    btnInsertar.setAttribute("name", "Insertar Usuario")
+    btnInsertar.setAttribute("name", "InsertUsu")
     btnInsertar.value = 'Insertar'
     details[3].appendChild(btnInsertar)
 

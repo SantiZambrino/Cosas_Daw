@@ -1,4 +1,4 @@
-export { mostrarObjeto, mostrarObjetoVehiculo, editconfirmation }
+export { mostrarObjeto, mostrarObjetoVehiculo, editconfirmation, insertConfirmation, deleteConfirmation }
 
 function mostrarObjeto(data) {
     const div = document.getElementById('contenido')
@@ -25,7 +25,15 @@ function editconfirmation() {
     const div = document.getElementById('contenido')
     crearDato('Campo editado', div)
 }
+function insertConfirmation() {
+    const div = document.getElementById('contenido')
+    crearDato('Usuario Creado', div)
+}
 
+function deleteConfirmation(){
+    const div = document.getElementById('contenido')
+    crearDato('Usuario Borrado', div)
+}
 
 function mostrarObjetoVehiculo(data) {
     let texto = "";
