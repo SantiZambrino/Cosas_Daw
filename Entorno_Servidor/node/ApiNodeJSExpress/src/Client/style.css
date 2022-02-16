@@ -51,3 +51,19 @@ header{
     flex-direction: column;
 }
 
+.mapa{
+    /* position: relative;
+    left: 620px; */
+    border-radius: 5%;
+    object-fit: cover;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+section{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
